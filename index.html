@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>PraiaStore -altamaré</title>
+    <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header class="site-header">
+        <div class="brand-row">
+            <img src="assets/imagens/e3f8ab8d-e57a-4c4a-b467-0042ddd4d4af.png" alt="Logo altamaré" class="logo-img">
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#produtos">Produtos</a>
+                <a href="ajuda.html" target="_blank" rel="noopener noreferrer">Ajuda</a>
+            </nav>
+        </div>
+        <div class="header-tools">
+            <div class="search-box" aria-label="Pesquisar produtos">
+                <input
+                    id="inputBusca"
+                    type="text"
+                    placeholder="O que você está procurando?"
+                    aria-label="Campo de busca"
+                >
+                <button type="button" id="btnBusca" aria-label="Buscar">⌕</button>
+            </div>
+            <div class="icon-actions">
+                <button class="icon-btn" id="btnCarrinho" aria-label="Sacola de compras">
+                    🛒
+                </button>
+                <button class="icon-btn" aria-label="Perfil do usuário">👤</button>
+            </div>
+        </div>
+    </header>
+    <!-- BANNER -->
+    <section class="hero" id="inicio">
+        <div class="hero-text">
+            <p>COLEÇÃO VERÃO 2026</p>
+            <h1>Seu verão começa aqui </h1>
+            <span>
+                Produtos perfeitos para praia, piscina e momentos incríveis.
+            </span>
+            <a href="#produtos" class="hero-button">
+                Comprar agora
+            </a>
+        </div>
+    </section>
+    <section class="categorias" aria-label="Categorias de produtos">
+        <div class="categoria-item">
+            <div class="categoria-icone acessorios">◌</div>
+            <span>joias</span>
+        </div>
+        <div class="categoria-item">
+            <div class="categoria-icone cangas">◌</div>
+            <span>Cangas</span>
+        </div>
+        <div class="categoria-item">
+            <div class="categoria-icone bolsas">◌</div>
+            <span>Bolsas</span>
+        </div>
+        <div class="categoria-item">
+            <div class="categoria-icone toalhas">◌</div>
+            <span>Toalhas</span>
+        </div>
+        <div class="categoria-item">
+            <div class="categoria-icone garrafas">◌</div>
+            <span>Garrafas</span>
+        </div>
+    </section>
+    <!-- PRODUTOS -->
+    <main id="produtos" class="ofertas-section">
+        <h2>Melhores Ofertas!</h2>
+        <div class="filtros-ofertas">
+            <button class="filtro ativo">Promoção</button>
+            <button class="filtro">Favoritos</button>
+        </div>
+        <div class="carrossel-ofertas">
+            <article class="card-oferta product-card">
+                <div class="bag-wrap bag-dark">
+                    <div class="bag">
+                        <span class="bag-name">seu nome</span>
+                    </div>
+                </div>
+                <div class="cores">
+                    <span class="cor cor-1"></span>
+                    <span class="cor cor-2"></span>
+                    <span class="cor cor-3"></span>
+                    <span class="cor cor-4"></span>
+                    <span class="mais">+2</span>
+                </div>
+                <div class="produto-info">
+                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
+                    <h3>chinelo- preto</h3>
+                    <div class="avaliacao">★★★★★ <span>7227 avaliações</span></div>
+                    <div class="preco-antigo">R$329,90</div>
+                    <div class="preco-final">
+                        <strong>R$70,00</strong>
+                        <span>15% OFF</span>
+                    </div>
+                    <p class="parcelas">3x de R$93,30 sem juros</p>
+                    <button class="comprar-btn">🛒 Comprar</button>
+                </div>
+            </article>
+            <article class="card-oferta product-card">
+                <div class="bag-wrap bag-taupe">
+                    <div class="bag">
+                        <span class="bag-name">seu nome</span>
+                    </div>
+                </div>
+                <div class="cores">
+                    <span class="cor cor-1"></span>
+                    <span class="cor cor-2"></span>
+                    <span class="cor cor-3"></span>
+                    <span class="cor cor-4"></span>
+                    <span class="mais">+2</span>
+                </div>
+                <div class="produto-info">
+                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
+                    <h3>Bolsa Joy Pro - Essence</h3>
+                    <div class="avaliacao">★★★★★ <span>4821 avaliações</span></div>
+                    <div class="preco-antigo">R$299,90</div>
+                    <div class="preco-final">
+                        <strong>R$249,90</strong>
+                        <span>17% OFF</span>
+                    </div>
+                    <p class="parcelas">3x de R$83,30 sem juros</p>
+                    <button class="comprar-btn">🛒 Comprar</button>
+                </div>
+            </article>
+            <article class="card-oferta product-card">
+                <div class="bag-wrap bag-ivory">
+                    <div class="bag">
+                        <span class="bag-name">seu nome</span>
+                    </div>
+                </div>
+                <div class="cores">
+                    <span class="cor cor-1"></span>
+                    <span class="cor cor-2"></span>
+                    <span class="cor cor-3"></span>
+                    <span class="cor cor-4"></span>
+                    <span class="mais">+2</span>
+                </div>
+                <div class="produto-info">
+                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
+                    <h3>Bolsa Joy Pro - Soft</h3>
+                    <div class="avaliacao">★★★★★ <span>2314 avaliações</span></div>
+                    <div class="preco-antigo">R$289,90</div>
+                    <div class="preco-final">
+                        <strong>R$239,90</strong>
+                        <span>18% OFF</span>
+                    </div>
+                    <p class="parcelas">3x de R$79,97 sem juros</p>
+                    <button class="comprar-btn">🛒 Comprar</button>
+                </div>
+            </article>
+            <article class="card-oferta product-card">
+                <div class="bag-wrap bag-sand">
+                    <div class="bag">
+                        <span class="bag-name">seu nome</span>
+                    </div>
+                </div>
+                <div class="cores">
+                    <span class="cor cor-1"></span>
+                    <span class="cor cor-2"></span>
+                    <span class="cor cor-3"></span>
+                    <span class="cor cor-4"></span>
+                    <span class="mais">+2</span>
+                </div>
+                <div class="produto-info">
+                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
+                    <h3>Bolsa Joy Pro - Coast</h3>
+                    <div class="avaliacao">★★★★★ <span>6042 avaliações</span></div>
+                    <div class="preco-antigo">R$349,90</div>
+                    <div class="preco-final">
+                        <strong>R$289,90</strong>
+                        <span>17% OFF</span>
+                    </div>
+                    <p class="parcelas">3x de R$96,63 sem juros</p>
+                    <button class="comprar-btn">🛒 Comprar</button>
+                </div>
+            </article>
+        </div>
+        <p id="nenhumResultado" class="carrinho-vazio" hidden>
+            Nenhum produto encontrado.
+        </p>
+        <button class="ver-mais" id="btnVerMais" type="button">
+            Ver Mais <span aria-hidden="true">&#8594;</span>
+        </button>
+    </main>
+    <section id="conteudoVerMais" hidden>
+        <section class="mais-hero" aria-labelledby="titulo-essencia">
+            <div class="mais-copy">
+                <div class="mais-rating" aria-label="5 estrelas, 63.700 avaliações">★★★★★ <small>(63.700+ avaliações)</small></div>
+                <h1 id="titulo-essencia">Por que AltaMaré?</h1>
+                <h2>Quem comprou conta.</h2>
+                <p>Viva seu estilo. Leve sua essência. Na AltaMaré, cada produto é feito para combinar com o seu jeito de ser. Porque tendência passa, mas ter identidade nunca sai de moda.</p>
+                <a class="mais-link" href="#produtos">Voltar para os produtos</a>
+            </div>
+            <div class="depoimentos" aria-label="Depoimentos de clientes">
+                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>Amanda Rajane<br><small>@amanda_senaisp</small></strong></div><p>Apaixonada pela bolsa de praia da @AltaMaré! É meu novo mimo mais estiloso agora.</p></article>
+                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>João Artur<br><small>@joaoartur_senaisp</small></strong></div><p>Como eu estou apaixonado pelas bolsas!</p></article>
+                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>Maria Paula<br><small>@maria_senaisp</small></strong></div><p>Apaixonada pelas minhas garrafas da @AltaMaré que chegaram hoje!</p></article>
+                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>Evelyn Fernanda<br><small>@evelyn_senaisp</small></strong></div><p>Simplesmente apaixonada. A escolha era exatamente o que eu desejava.</p></article>
+            </div>
+        </section>
+        <section class="diferencial" aria-labelledby="titulo-diferencial">
+            <h2 id="titulo-diferencial">Nosso Diferencial</h2>
+            <div class="diferencial-grid">
+                <div class="diferencial-item"><span class="diferencial-icone">☼</span>Produtos para<br>viver o verão.</div>
+                <div class="diferencial-item"><span class="diferencial-icone">♧</span>Qualidade para<br>acompanhar cada maré.</div>
+                <div class="diferencial-item"><span class="diferencial-icone">☆</span>Estilo, conforto e<br>praticidade.</div>
+                <div class="diferencial-item"><span class="diferencial-icone">☼</span>Tudo para deixar seus dias<br>de praia ainda melhores.</div>
+            </div>
+        </section>
+        <section class="sobre-nos" aria-labelledby="titulo-sobre-nos">
+            <div class="sobre-nos-conteudo">
+                <span class="sobre-nos-kicker">SOBRE A ALTAMARÉ</span>
+                <h2 id="titulo-sobre-nos">Mais que produtos de praia.<br><strong>Um jeito leve de viver.</strong></h2>
+                <p>A AltaMaré nasceu da amizade de quatro pessoas apaixonadas pelo verão e da vontade de tornar cada ida à praia ainda mais especial. Criamos uma seleção de acessórios bonitos, funcionais e feitos para acompanhar a sua rotina, da primeira onda ao pôr do sol.</p>
+                <div class="sobre-nos-pilares">
+                    <div><strong>01</strong><span>Estilo que combina com você</span></div>
+                    <div><strong>02</strong><span>Praticidade para todos os dias</span></div>
+                    <div><strong>03</strong><span>Momentos que ficam na memória</span></div>
+                </div>
+            </div>
+            <div class="sobre-nos-destaque" aria-label="Mensagem da AltaMaré">
+                <span class="sobre-nos-sol">☼</span>
+                <p>“Leve o essencial.<br><strong>Viva o extraordinário.</strong>”</p>
+                <span class="sobre-nos-assinatura">AltaMaré, do nosso verão para o seu.</span>
+            </div>
+        </section>
+        <footer class="mais-footer">
+            <div>
+                <h2>Nós enviamos e-mails incríveis.</h2>
+                <p>Saiba primeiro dos nossos lançamentos, coleções e exclusivas.</p>
+                <form class="newsletter" action="#" method="post"><input type="email" aria-label="Seu e-mail" required><button type="submit" aria-label="Assinar newsletter">&#8594;</button></form>
+                <h3>Métodos de Pagamento</h3>
+                <div class="pagamentos" aria-label="Visa, Mastercard, Elo e Pix">VISA ◉ ELO ◈</div>
+            </div>
+        </footer>
+    </section>
+    <div id="modalCarrinho" class="modal">
+        <div class="modal-content">
+            <button class="fechar" onclick="fecharCarrinho()">×</button>
+            <h2>Seu Carrinho</h2>
+            <div id="listaCarrinho">
+                <p class="carrinho-vazio">
+                    Seu carrinho está vazio.
+                </p>
+            </div>
+            <div class="total">
+                Total:
+                <strong id="total">R$ 0,00</strong>
+            </div>
+            <button class="finalizar" onclick="finalizarCompra()">
+                Finalizar compra
+            </button>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 PraiaStore - Todos os direitos reservados.</p>
+    </footer>
+    <script src="assets/maquina.js"></script>
+</body>
+</html>

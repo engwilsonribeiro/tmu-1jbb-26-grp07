@@ -1,282 +1,513 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>PraiaStore -altamaré</title>
-    <link rel="stylesheet" href="assets/estilo.css">
-
-    <!-- Adicionando o link para o Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltaMaré | Produtos de Praia</title>
+    <link rel="stylesheet" href="./assets/estilo.css">
     <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-    <!-- CABEÇALHO -->
-    <header class="site-header">
-        <div class="brand-row">
-            <img src="assets/imagens/e3f8ab8d-e57a-4c4a-b467-0042ddd4d4af.png" alt="Logo altamaré" class="logo-img">
-            <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#auditoria">Auditoria</a>
-                <a href="#produtos">Produtos</a>
-                <a href="ajuda.html" target="_blank" rel="noopener noreferrer">Ajuda</a>
-            </nav>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="logo">
+            Alta<span>Maré</span>
         </div>
-        <div class="header-tools">
-            <div class="search-box" aria-label="Pesquisar produtos">
-                <input
-                    id="inputBusca"
-                    type="text"
-                    placeholder="O que você está procurando?"
-                    aria-label="Campo de busca"
-                >
-                <button type="button" id="btnBusca" aria-label="Buscar">⌕</button>
-            </div>
-            <div class="icon-actions">
-                <button class="icon-btn" id="btnCarrinho" aria-label="Sacola de compras">
-
-                    <!--icones -->
-                    <i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i>
-
-                </button>
-                <button class="icon-btn" aria-label="Perfil do usuário">
-
-                    <!--icones -->
-
-                    <i class="fa fa-user " aria-hidden="true"></i>
-
-                </button>
-            </div>
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre nós</a>
+        </nav>
+        <div class="header-acoes">
+            <button onclick="abrirBusca()" class="icone" aria-label="Abrir busca">
+                <img src="./assets/imagens/lupa.png" alt="" class="icone-imagem">
+            </button>
+            <button onclick="abrirCarrinho()" class="icone carrinho" aria-label="Abrir carrinho">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <span id="contador">0</span>
+            </button>
         </div>
     </header>
-    <!-- BANNER -->
-    <section class="hero" id="inicio">
-        <div class="hero-text">
-            <p>COLEÇÃO VERÃO 2026</p>
-            <h1>Seu verão começa aqui </h1>
-            <span>
-                Produtos perfeitos para praia, piscina e momentos incríveis.
-            </span>
-            <a href="#produtos" class="hero-button">
-                Comprar agora
+    <!-- ================= BUSCA ================= -->
+    <div id="barraBusca" class="barra-busca">
+        <input
+            type="text"
+            id="campoBusca"
+            placeholder="O que você está procurando?"
+            onkeyup="buscarProdutos()"
+        >
+        <button onclick="fecharBusca()" aria-label="Fechar busca">
+            <img src="./assets/imagens/lupa.png" alt="" class="icone-imagem">
+        </button>
+    </div>
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero">
+        <div class="hero-conteudo">
+            <p class="pequeno-titulo">
+                COLEÇÃO VERÃO 2026
+            </p>
+            <h1>
+                Viva o verão<br>
+                do seu jeito.
+            </h1>
+            <p>
+                Produtos para praia, piscina e todos
+                os momentos que merecem ser aproveitados.
+            </p>
+            <a href="#produtos" class="botao-principal">
+                Comprar agora →
             </a>
         </div>
     </section>
-    <section class="categorias" aria-label="Categorias de produtos">
-        <div class="categoria-item">
-            <div class="categoria-icone acessorios">◌</div>
-            <span>joias</span>
+    <!-- ================= CATEGORIAS ================= -->
+    <section id="categorias" class="categorias">
+        <div class="titulo-secao">
+            <p>EXPLORE</p>
+            <h2>Encontre seu estilo</h2>
         </div>
-        <div class="categoria-item">
-            <div class="categoria-icone cangas">◌</div>
-            <span>Cangas</span>
-        </div>
-        <div class="categoria-item">
-            <div class="categoria-icone bolsas">◌</div>
-            <span>Bolsas</span>
-        </div>
-        <div class="categoria-item">
-            <div class="categoria-icone toalhas">◌</div>
-            <span>Toalhas</span>
-        </div>
-        <div class="categoria-item">
-            <div class="categoria-icone garrafas">◌</div>
-            <span>Garrafas</span>
+        <div class="categorias-grid">
+            <button class="categoria" onclick="filtrarCategoria('joias')">
+                <div class="categoria-imagem joias">
+                    <img src="./assets/imagens/joia.png" alt="Joias" class="imagem-categoria">
+                </div>
+                <h3>Joias</h3>
+                <span>Ver produtos →</span>
+            </button>
+            <button class="categoria" onclick="filtrarCategoria('cangas')">
+                <div class="categoria-imagem cangas">
+                    <img src="./assets/imagens/canga sem fundo.png" alt="Cangas" class="imagem-categoria">
+                </div>
+                <h3>Cangas</h3>
+                <span>Ver produtos →</span>
+            </button>
+            <button class="categoria" onclick="filtrarCategoria('bolsas')">
+                <div class="categoria-imagem bolsas">
+                    <img src="./assets/imagens/joia.png" alt="Bolsas" class="imagem-categoria">
+                </div>
+                <h3>Bolsas</h3>
+                <span>Ver produtos →</span>
+            </button>
+            <button class="categoria" onclick="filtrarCategoria('toalhas')">
+                <div class="categoria-imagem toalhas">
+                    <img src="./assets/imagens/joia sem fundo.png" alt="Toalhas" class="imagem-categoria">
+                </div>
+                <h3>Toalhas</h3>
+                <span>Ver produtos →</span>
+            </button>
+            <button class="categoria" onclick="filtrarCategoria('garrafas')">
+                <div class="categoria-imagem garrafas">
+                    <img src="./assets/imagens/joia.png" alt="Garrafas" class="imagem-categoria">
+                </div>
+                <h3>Garrafas</h3>
+                <span>Ver produtos →</span>
+            </button>
         </div>
     </section>
-    <!-- PRODUTOS -->
-    <main id="produtos" class="ofertas-section">
-        <h2>Melhores Ofertas!</h2>
-        <div class="filtros-ofertas">
-            <button class="filtro ativo">Promoção</button>
-            <button class="filtro">Favoritos</button>
+    <!-- ================= PRODUTOS ================= -->
+    <main id="produtos" class="produtos">
+        <div class="produtos-topo">
+            <div>
+                <p class="pequeno-titulo">NOSSA LOJA</p>
+                <h2>
+                    Produtos em destaque
+                </h2>
+            </div>
+            <button onclick="mostrarTodos()" class="botao-todos">
+                Ver todos →
+            </button>
         </div>
-        <div class="carrossel-ofertas">
-            <article class="card-oferta product-card">
-                <div class="bag-wrap bag-dark">
-                    <div class="bag">
-                        <span class="bag-name">seu nome</span>
+        <div id="listaProdutos" class="produtos-grid">
+            <!-- PRODUTO 1 -->
+            <article
+                class="produto"
+                data-categoria="bolsas"
+                data-nome="Bolsa Praia Breeze"
+            >
+                <div class="produto-imagem imagem-bolsa">
+                    <span class="etiqueta">
+                        -20%
+                    </span>
+                    <div class="produto-desenho">
+                        <img src="./assets/imagens/joia.png" alt="Bolsa Praia Breeze" class="imagem-produto">
                     </div>
-                </div>
-                <div class="cores">
-                    <span class="cor cor-1"></span>
-                    <span class="cor cor-2"></span>
-                    <span class="cor cor-3"></span>
-                    <span class="cor cor-4"></span>
-                    <span class="mais">+2</span>
                 </div>
                 <div class="produto-info">
-                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
-                    <h3>chinelo- preto</h3>
-                    <div class="avaliacao">★★★★★ <span>7227 avaliações</span></div>
-                    <div class="preco-antigo">R$329,90</div>
-                    <div class="preco-final">
-                        <strong>R$70,00</strong>
-                        <span>15% OFF</span>
+                    <span class="categoria-produto">
+                        BOLSAS
+                    </span>
+                    <h3>
+                        Bolsa Praia Breeze
+                    </h3>
+                    <div class="avaliacao">
+                        ★★★★★
+                        <span>(128)</span>
                     </div>
-                    <p class="parcelas">3x de R$93,30 sem juros</p>
-                    <button class="comprar-btn">🛒 Comprar</button>
+                    <div class="precos">
+                        <span class="preco-antigo">
+                            R$ 249,90
+                        </span>
+                        <strong>
+                            R$ 199,90
+                        </strong>
+                    </div>
+                    <button
+                        class="botao-comprar"
+                        onclick="adicionarCarrinho('Bolsa Praia Breeze', 199.90)"
+                    >
+                        Adicionar ao carrinho
+                    </button>
                 </div>
             </article>
-            <article class="card-oferta product-card">
-                <div class="bag-wrap bag-taupe">
-                    <div class="bag">
-                        <span class="bag-name">seu nome</span>
+            <!-- PRODUTO 2 -->
+            <article
+                class="produto"
+                data-categoria="cangas"
+                data-nome="Canga Sunset"
+            >
+                <div class="produto-imagem imagem-canga">
+                    <span class="etiqueta">
+                        NOVO
+                    </span>
+                    <div class="produto-desenho">
+                        <img src="./assets/imagens/canga sem fundo.png" alt="Canga Sunset" class="imagem-produto">
                     </div>
-                </div>
-                <div class="cores">
-                    <span class="cor cor-1"></span>
-                    <span class="cor cor-2"></span>
-                    <span class="cor cor-3"></span>
-                    <span class="cor cor-4"></span>
-                    <span class="mais">+2</span>
                 </div>
                 <div class="produto-info">
-                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
-                    <h3>Bolsa Joy Pro - Essence</h3>
-                    <div class="avaliacao">★★★★★ <span>4821 avaliações</span></div>
-                    <div class="preco-antigo">R$299,90</div>
-                    <div class="preco-final">
-                        <strong>R$249,90</strong>
-                        <span>17% OFF</span>
+                    <span class="categoria-produto">
+                        CANGAS
+                    </span>
+                    <h3>
+                        Canga Sunset
+                    </h3>
+                    <div class="avaliacao">
+                        ★★★★★
+                        <span>(94)</span>
                     </div>
-                    <p class="parcelas">3x de R$83,30 sem juros</p>
-                    <button class="comprar-btn">🛒 Comprar</button>
+                    <div class="precos">
+
+                        <strong>
+                            R$ 89,90
+                        </strong>
+                    </div>
+                    <button
+                        class="botao-comprar"
+                        onclick="adicionarCarrinho('Canga Sunset', 89.90)"
+                    >
+                        Adicionar ao carrinho
+                    </button>
                 </div>
             </article>
-            <article class="card-oferta product-card">
-                <div class="bag-wrap bag-ivory">
-                    <div class="bag">
-                        <span class="bag-name">seu nome</span>
+            <!-- PRODUTO 3 -->
+            <article
+                class="produto"
+                data-categoria="joias"
+                data-nome="Colar Ocean"
+            >
+                <div class="produto-imagem imagem-joia">
+                    <span class="etiqueta">
+                        NOVO
+                    </span>
+                    <div class="produto-desenho">
+                        <img src="./assets/imagens/joia.png" alt="Colar Ocean" class="imagem-produto">
                     </div>
-                </div>
-                <div class="cores">
-                    <span class="cor cor-1"></span>
-                    <span class="cor cor-2"></span>
-                    <span class="cor cor-3"></span>
-                    <span class="cor cor-4"></span>
-                    <span class="mais">+2</span>
                 </div>
                 <div class="produto-info">
-                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
-                    <h3>Bolsa Joy Pro - Soft</h3>
-                    <div class="avaliacao">★★★★★ <span>2314 avaliações</span></div>
-                    <div class="preco-antigo">R$289,90</div>
-                    <div class="preco-final">
-                        <strong>R$239,90</strong>
-                        <span>18% OFF</span>
+                    <span class="categoria-produto">
+                        JOIAS
+                    </span>
+                    <h3>
+                        Colar Ocean
+                    </h3>
+                    <div class="avaliacao">
+                        ★★★★★
+                        <span>(76)</span>
                     </div>
-                    <p class="parcelas">3x de R$79,97 sem juros</p>
-                    <button class="comprar-btn">🛒 Comprar</button>
+                    <div class="precos">
+                        <strong>
+                            R$ 119,90
+                        </strong>
+                    </div>
+                    <button
+                        class="botao-comprar"
+                        onclick="adicionarCarrinho('Colar Ocean', 119.90)"
+                    >
+                        Adicionar ao carrinho
+                    </button>
                 </div>
             </article>
-            <article class="card-oferta product-card">
-                <div class="bag-wrap bag-sand">
-                    <div class="bag">
-                        <span class="bag-name">seu nome</span>
+            <!-- PRODUTO 4 -->
+            <article
+                class="produto"
+                data-categoria="toalhas"
+                data-nome="Toalha Summer"
+            >
+                <div class="produto-imagem imagem-toalha">
+                    <span class="etiqueta">
+                        -15%
+                    </span>
+                    <div class="produto-desenho">
+                        <img src="./assets/imagens/joia sem fundo.png" alt="Toalha Summer" class="imagem-produto">
                     </div>
-                </div>
-                <div class="cores">
-                    <span class="cor cor-1"></span>
-                    <span class="cor cor-2"></span>
-                    <span class="cor cor-3"></span>
-                    <span class="cor cor-4"></span>
-                    <span class="mais">+2</span>
                 </div>
                 <div class="produto-info">
-                    <span class="tag-rotina">LEVE TUDO NA ROTINA</span>
-                    <h3>Bolsa Joy Pro - Coast</h3>
-                    <div class="avaliacao">★★★★★ <span>6042 avaliações</span></div>
-                    <div class="preco-antigo">R$349,90</div>
-                    <div class="preco-final">
-                        <strong>R$289,90</strong>
-                        <span>17% OFF</span>
+                    <span class="categoria-produto">
+                        TOALHAS
+                    </span>
+                    <h3>
+                        Toalha Summer
+                    </h3>
+                    <div class="avaliacao">
+                        ★★★★★
+                        <span>(211)</span>
                     </div>
-                    <p class="parcelas">3x de R$96,63 sem juros</p>
-                    <button class="comprar-btn">🛒 Comprar</button>
+                    <div class="precos">
+                        <span class="preco-antigo">
+                            R$ 139,90
+                        </span>
+                        <strong>
+                            R$ 119,90
+                        </strong>
+                    </div>
+                    <button
+                        class="botao-comprar"
+                        onclick="adicionarCarrinho('Toalha Summer', 119.90)"
+                    >
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+            </article>
+            <!-- PRODUTO 5 -->
+            <article
+                class="produto"
+                data-categoria="garrafas"
+                data-nome="Garrafa Ocean"
+            >
+                <div class="produto-imagem imagem-garrafa">
+                    <span class="etiqueta">
+                        MAIS VENDIDO
+                    </span>
+                    <div class="produto-desenho">
+                        <img src="./assets/imagens/joia.png" alt="Garrafa Ocean" class="imagem-produto">
+                    </div>
+                </div>
+                <div class="produto-info">
+                    <span class="categoria-produto">
+                        GARRAFAS
+                    </span>
+                    <h3>
+                        Garrafa Ocean
+                    </h3>
+                    <div class="avaliacao">
+                        ★★★★★
+                        <span>(328)</span>
+                    </div>
+                    <div class="precos">
+                        <strong>
+                            R$ 79,90
+                        </strong>
+                    </div>
+                    <button
+                        class="botao-comprar"
+                        onclick="adicionarCarrinho('Garrafa Ocean', 79.90)"
+                    >
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+            </article>
+            <!-- PRODUTO 6 -->
+            <article
+                class="produto"
+                data-categoria="bolsas"
+                data-nome="Bolsa Coast"
+            >
+                <div class="produto-imagem imagem-coast">
+                    <span class="etiqueta">
+                        -18%
+                    </span>
+
+                    <div class="produto-desenho">
+                        <img src="./assets/imagens/joia.png" alt="Bolsa Coast" class="imagem-produto">
+                    </div>
+                </div>
+                <div class="produto-info">
+                    <span class="categoria-produto">
+                        BOLSAS
+                    </span>
+                    <h3>
+                        Bolsa Coast
+                    </h3>
+                    <div class="avaliacao">
+                        ★★★★★
+                        <span>(156)</span>
+                    </div>
+                    <div class="precos">
+                        <span class="preco-antigo">
+                            R$ 299,90
+                        </span>
+                        <strong>
+                            R$ 244,90
+                        </strong>
+                    </div>
+                    <button
+                        class="botao-comprar"
+                        onclick="adicionarCarrinho('Bolsa Coast', 244.90)"
+                    >
+                        Adicionar ao carrinho
+                    </button>
                 </div>
             </article>
         </div>
-        <p id="nenhumResultado" class="carrinho-vazio" hidden>
+        <p id="semResultado" class="sem-resultado">
             Nenhum produto encontrado.
         </p>
-        <button class="ver-mais" id="btnVerMais" type="button">
-            Ver Mais <span aria-hidden="true">&#8594;</span>
-        </button>
     </main>
-    <section id="conteudoVerMais" hidden>
-        <section class="mais-hero" aria-labelledby="titulo-essencia">
-            <div class="mais-copy">
-                <div class="mais-rating" aria-label="5 estrelas, 63.700 avaliações">★★★★★ <small>(63.700+ avaliações)</small></div>
-                <h1 id="titulo-essencia">Por que AltaMaré?</h1>
-                <h2>Quem comprou conta.</h2>
-                <p>Viva seu estilo. Leve sua essência. Na AltaMaré, cada produto é feito para combinar com o seu jeito de ser. Porque tendência passa, mas ter identidade nunca sai de moda.</p>
-                <a class="mais-link" href="#produtos">Voltar para os produtos</a>
-            </div>
-            <div class="depoimentos" aria-label="Depoimentos de clientes">
-                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>Amanda Rajane<br><small>@amanda_senaisp</small></strong></div><p>Apaixonada pela bolsa de praia da @AltaMaré! É meu novo mimo mais estiloso agora.</p></article>
-                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>João Artur<br><small>@joaoartur_senaisp</small></strong></div><p>Como eu estou apaixonado pelas bolsas!</p></article>
-                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>Maria Paula<br><small>@maria_senaisp</small></strong></div><p>Apaixonada pelas minhas garrafas da @AltaMaré que chegaram hoje!</p></article>
-                <article class="depoimento"><div class="depoimento-cabecalho"><span class="avatar"></span><strong>Evelyn Fernanda<br><small>@evelyn_senaisp</small></strong></div><p>Simplesmente apaixonada. A escolha era exatamente o que eu desejava.</p></article>
-            </div>
-        </section>
-        <section class="diferencial" aria-labelledby="titulo-diferencial">
-            <h2 id="titulo-diferencial">Nosso Diferencial</h2>
-            <div class="diferencial-grid">
-                <div class="diferencial-item"><span class="diferencial-icone">☼</span>Produtos para<br>viver o verão.</div>
-                <div class="diferencial-item"><span class="diferencial-icone">♧</span>Qualidade para<br>acompanhar cada maré.</div>
-                <div class="diferencial-item"><span class="diferencial-icone">☆</span>Estilo, conforto e<br>praticidade.</div>
-                <div class="diferencial-item"><span class="diferencial-icone">☼</span>Tudo para deixar seus dias<br>de praia ainda melhores.</div>
-            </div>
-        </section>
-        <section class="sobre-nos" aria-labelledby="titulo-sobre-nos">
-            <div class="sobre-nos-conteudo">
-                <span class="sobre-nos-kicker">SOBRE A ALTAMARÉ</span>
-                <h2 id="titulo-sobre-nos">Mais que produtos de praia.<br><strong>Um jeito leve de viver.</strong></h2>
-                <p>A AltaMaré nasceu da amizade de quatro pessoas apaixonadas pelo verão e da vontade de tornar cada ida à praia ainda mais especial. Criamos uma seleção de acessórios bonitos, funcionais e feitos para acompanhar a sua rotina, da primeira onda ao pôr do sol.</p>
-                <div class="sobre-nos-pilares">
-                    <div><strong>01</strong><span>Estilo que combina com você</span></div>
-                    <div><strong>02</strong><span>Praticidade para todos os dias</span></div>
-                    <div><strong>03</strong><span>Momentos que ficam na memória</span></div>
-                </div>
-            </div>
-            <div class="sobre-nos-destaque" aria-label="Mensagem da AltaMaré">
-                <span class="sobre-nos-sol">☼</span>
-                <p>“Leve o essencial.<br><strong>Viva o extraordinário.</strong>”</p>
-                <span class="sobre-nos-assinatura">AltaMaré, do nosso verão para o seu.</span>
-            </div>
-        </section>
-        <footer class="mais-footer">
-            <div>
-                <h2>Nós enviamos e-mails incríveis.</h2>
-                <p>Saiba primeiro dos nossos lançamentos, coleções e exclusivas.</p>
-                <form class="newsletter" action="#" method="post"><input type="email" aria-label="Seu e-mail" required><button type="submit" aria-label="Assinar newsletter">&#8594;</button></form>
-                <h3>Métodos de Pagamento</h3>
-                <div class="pagamentos" aria-label="Visa, Mastercard, Elo e Pix">VISA ◉ ELO ◈</div>
-            </div>
-        </footer>
+    <!-- ================= BANNER ================= -->
+    <section class="banner">
+        <div>
+            <p>
+                SEU VERÃO, SUA HISTÓRIA
+            </p>
+            <h2>
+                Leve o essencial.<br>
+                Viva o extraordinário.
+            </h2>
+            <a href="#produtos">
+                Explorar produtos →
+            </a>
+        </div>
     </section>
+    <!-- ================ SOBRE ================= -->
+    <section id="sobre" class="sobre">
+        <div class="sobre-texto">
+            <p class="pequeno-titulo">
+                SOBRE A ALTAMARÉ
+            </p>
+            <h2>
+                Mais que produtos de praia.
+                <span>Um jeito leve de viver.</span>
+            </h2>
+            <p>
+                A AltaMaré nasceu para transformar os momentos
+                de praia em experiências ainda mais especiais.
+                Criamos produtos bonitos, funcionais e feitos
+                para acompanhar você em todos os seus dias
+                de verão.
+            </p>
+        </div>
+        <div class="sobre-numeros">
+            <div>
+                <strong>01</strong>
+                <span>
+                    Estilo que combina com você
+                </span>
+            </div>
+            <div>
+                <strong>02</strong>
+                <span>
+                    Qualidade para todos os dias
+                </span>
+            </div>
+            <div>
+                <strong>03</strong>
+                <span>
+                    Momentos que ficam na memória
+                </span>
+            </div>
+        </div>
+    </section>
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter">
+        <div>
+            <p>
+                FIQUE POR DENTRO
+            </p>
+            <h2>
+                Receba novidades da AltaMaré
+            </h2>
+            <span>
+                Lançamentos, promoções e novidades diretamente no seu e-mail.
+            </span>
+        </div>
+        <form onsubmit="inscrever(event)">
+            <input
+                type="email"
+                id="email"
+                placeholder="Seu melhor e-mail"
+                required
+            >
+            <button type="submit">
+                Cadastrar →
+            </button>
+        </form>
+    </section>
+    <!-- ================ FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-logo">
+            Alta<span>Maré</span>
+            <p>
+                Seu verão começa aqui.
+            </p>
+        </div>
+        <div class="footer-coluna">
+            <h3>Loja</h3>
+            <a href="#produtos">Produtos</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#sobre">Sobre nós</a>
+        </div>
+        <div class="footer-coluna">
+            <h3>Atendimento</h3>
+            <a href="#">Contato</a>
+            <a href="#">Ajuda</a>
+            <a href="#">Trocas e devoluções</a>
+
+        </div>
+        <div class="footer-coluna">
+            <h3>Redes sociais</h3>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+    <div class="copyright">
+        © 2026 AltaMaré — Todos os direitos reservados.
+    </div>
+    <!-- ================= MODAL CARRINHO ================= -->
     <div id="modalCarrinho" class="modal">
-        <div class="modal-content">
-            <button class="fechar" onclick="fecharCarrinho()">×</button>
-            <h2>Seu Carrinho</h2>
+        <div class="modal-conteudo">
+            <button
+                class="fechar"
+                onclick="fecharCarrinho()"
+            aria-label="Fechar carrinho"
+            >
+                <img src="./assets/imagens/joia.png" alt="" class="icone-imagem">
+            </button>
+            <h2>
+                Seu carrinho
+            </h2>
             <div id="listaCarrinho">
                 <p class="carrinho-vazio">
                     Seu carrinho está vazio.
                 </p>
             </div>
             <div class="total">
-                Total:
-                <strong id="total">R$ 0,00</strong>
+                <span>
+                    Total
+                </span>
+                <strong id="total">
+                    R$ 0,00
+                </strong>
             </div>
-            <button class="finalizar" onclick="finalizarCompra()">
+            <button
+                class="finalizar"
+                onclick="finalizarCompra()"
+            >
                 Finalizar compra
             </button>
         </div>
     </div>
-    <footer>
-        <p>© 2026 PraiaStore - Todos os direitos reservados.</p>
-    </footer>
-    <script src="assets/maquina.js"></script>
+    <script src="./assets/maquina.js"></script>
 </body>
 </html>
+ 

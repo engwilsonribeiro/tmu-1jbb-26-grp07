@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+    <title>Meu Perfil</title>
+</head>
+<body>
+
+    <header class="conta-header">
+        <a class="ajuda-home-link" href="./index.html">
+            <span aria-hidden="true">&#8592;</span>
+            Página Inicial
+        </a>
+    </header>
+
+    <main class="perfil-main">
+        <section id="login-panel" class="perfil-panel login-panel" hidden>
+            <header class="perfil-topo">
+                <h1>Entrar na Conta</h1>
+                <p>Faça login para acessar e editar seu perfil</p>
+            </header>
+
+            <form id="login-form" class="perfil-form">
+                <div class="form-group">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" required placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required placeholder="••••••••">
+                </div>
+
+                <p id="mensagem-login" class="mensagem-form" aria-live="polite"></p>
+                <p class="nota-autenticacao">Acesso demonstrativo: contas e senhas ficam salvas somente neste navegador.</p>
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Entrar</button>
+                </div>
+                <div class="links-autenticacao">
+                    <button type="button" class="link-autenticacao" id="abrir-recuperacao">Esqueci a senha</button>
+                    <button type="button" class="link-autenticacao" id="abrir-cadastro">Criar conta</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="cadastro-panel" class="perfil-panel" hidden>
+            <header class="perfil-topo">
+                <h1>Criar conta</h1>
+                <p>Cadastre seus dados para acessar seu perfil</p>
+            </header>
+            <form id="cadastro-form" class="perfil-form">
+                <div class="form-group">
+                    <label for="cadastro-nome">Nome completo:</label>
+                    <input type="text" id="cadastro-nome" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="cadastro-email">E-mail:</label>
+                    <input type="email" id="cadastro-email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="cadastro-senha">Senha (mínimo 8 caracteres):</label>
+                    <input type="password" id="cadastro-senha" required minlength="8" autocomplete="new-password">
+                </div>
+                <p id="mensagem-cadastro" class="mensagem-form" aria-live="polite"></p>
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Criar conta</button>
+                    <button type="button" class="btn-cancelar" data-voltar-login>Voltar ao login</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="recuperacao-panel" class="perfil-panel" hidden>
+            <header class="perfil-topo">
+                <h1>Redefinir senha</h1>
+                <p>Informe o e-mail cadastrado e escolha uma nova senha</p>
+            </header>
+            <form id="recuperacao-form" class="perfil-form">
+                <div class="form-group">
+                    <label for="recuperacao-email">E-mail:</label>
+                    <input type="email" id="recuperacao-email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="recuperacao-senha">Nova senha (mínimo 8 caracteres):</label>
+                    <input type="password" id="recuperacao-senha" required minlength="8" autocomplete="new-password">
+                </div>
+                <p class="nota-autenticacao">Demonstração local: não é enviado e-mail para confirmar sua identidade.</p>
+                <p id="mensagem-recuperacao" class="mensagem-form" aria-live="polite"></p>
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Salvar nova senha</button>
+                    <button type="button" class="btn-cancelar" data-voltar-login>Voltar ao login</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="perfil-panel" class="perfil-panel" hidden>
+            <header class="perfil-topo">
+                <div class="avatar-container">
+                    <div class="avatar-perfil" id="avatar-inicial">U</div>
+                </div>
+                <h1 id="titulo-nome">Meu Perfil</h1>
+                <p>Gerencie suas informações pessoais e preferências da conta</p>
+            </header>
+
+            <form id="perfil-form" class="perfil-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                </div>
+
+                <p id="mensagem-salvo" class="mensagem-form" aria-live="polite"></p>
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Salvar Alterações</button>
+                    <button type="button" class="btn-cancelar" id="btn-logout">Sair da Conta</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="assets/login.js"></script>
+</body>
+</html>

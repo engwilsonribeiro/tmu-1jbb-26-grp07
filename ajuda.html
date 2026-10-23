@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/ajuda.css">
+    <title>Central de Ajuda - Suporte</title>
+</head>
+<body class="ajuda-body">
+
+    <div class="ajuda-page">
+      
+        <header class="ajuda-header">
+            <a class="ajuda-home-link" href="./index.html">
+                <span aria-hidden="true">&#8592;</span>
+                Página Inicial
+            </a>
+        </header>
+
+        <main class="ajuda-main">
+            <section class="ajuda-topo">
+                <h1>Como podemos ajudar você?</h1>
+                <p>Selecione a opção que melhor descreve o seu problema ou dúvida.</p>
+            </section>
+
+           
+            <div class="ajuda-form-card">
+                <form action="#" method="post" class="ajuda-form">
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail de Contato:</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-problema">Selecione o problema:</label>
+                        <select id="tipo-problema" name="tipo_problema" required>
+                            <option value="" disabled selected>Selecione um tópico...</option>
+                            <option value="pedido">Problema com um pedido/entrega</option>
+                            <option value="pagamento">Dificuldade no pagamento</option>
+                            <option value="troca">Trocas e devoluções</option>
+                            <option value="conta">Acesso ou cadastro na conta</option>
+                            <option value="outro">Outro (especificar abaixo)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="campo-outro-container" style="display: none;">
+                        <label for="descricao-outro">Descreva o seu problema:</label>
+                        <textarea id="descricao-outro" name="descricao_outro" placeholder="Descreva aqui com detalhes o motivo do seu contato..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-ajuda">Enviar Solicitação</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script>
+        const tipoProblema = document.getElementById("tipo-problema");
+        const campoOutro = document.getElementById("campo-outro-container");
+        const descricaoOutro = document.getElementById("descricao-outro");
+
+        tipoProblema.addEventListener("change", () => {
+            const selecionouOutro = tipoProblema.value === "outro";
+            campoOutro.style.display = selecionouOutro ? "flex" : "none";
+            descricaoOutro.required = selecionouOutro;
+            if (!selecionouOutro) descricaoOutro.value = "";
+        });
+    </script>
+</body>
+</html>

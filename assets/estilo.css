@@ -132,6 +132,7 @@ nav a:hover {
     height: 46px;
     border-color: #b8c5d1;
     font-size: 1.45rem;
+    text-decoration: none;
 }
 
 /* HERO */
@@ -650,6 +651,76 @@ nav a:hover {
     opacity: 0.95;
 }
 
+.ajuda-form-card {
+    width: min(680px, 100%);
+    margin: 36px auto 0;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ajuda-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ajuda-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ajuda-form label {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.ajuda-form input,
+.ajuda-form select,
+.ajuda-form textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    color: #1f2937;
+    background: #f7f9ee;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    font: inherit;
+}
+
+.ajuda-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.ajuda-form input:focus,
+.ajuda-form select:focus,
+.ajuda-form textarea:focus {
+    border-color: #0e7bb8;
+    outline: 3px solid rgba(14, 123, 184, 0.15);
+}
+
+.ajuda-form .btn-enviar-ajuda {
+    min-height: 50px;
+    padding: 12px 18px;
+    color: #fff;
+    background: #ff6b00;
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ajuda-form .btn-enviar-ajuda:hover {
+    background: #e85f00;
+    transform: translateY(-1px);
+}
+
 .ajuda-search {
     width: min(820px, 100%);
     margin: 34px auto 0;
@@ -773,6 +844,10 @@ nav a:hover {
 
     .ajuda-brand {
         font-size: 1.7rem;
+    }
+
+    .ajuda-form-card {
+        padding: 24px 18px;
     }
 
     .ajuda-search {

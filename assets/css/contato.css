@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 64px 20px;
+    background: #f4f1e8;
+    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body > h1,
+body > p,
+body > form {
+    width: min(100%, 680px);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body > h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #121212;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    text-align: center;
+}
+
+body > p {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #4b5563;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+body > form {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    background: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+form label {
+    margin-bottom: 8px;
+    color: #1f2937;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    color: #1f2937;
+    background: #f7f9ee;
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #0e7bb8;
+    box-shadow: 0 0 0 3px rgba(14, 123, 184, 0.15);
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 15px 18px;
+    color: #fff;
+    background: #ff6b00;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+    background: #e85f00;
+    transform: translateY(-2px);
+}
+
+form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 36px 16px;
+    }
+
+    body > form {
+        padding: 26px 20px;
+    }
+}

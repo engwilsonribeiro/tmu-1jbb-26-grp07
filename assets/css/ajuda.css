@@ -1,0 +1,177 @@
+.ajuda-body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f9ee;
+}
+
+.ajuda-main {
+    max-width: 760px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+
+.ajuda-topo h1 {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 800;
+    color: #121212;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.ajuda-topo p {
+    text-align: center;
+    color: #4b5563;
+    font-size: 1.05rem;
+    margin-bottom: 36px;
+    line-height: 1.5;
+}
+
+
+.ajuda-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ajuda-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ajuda-form label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+
+.ajuda-form input[type="text"],
+.ajuda-form input[type="email"],
+.ajuda-form select,
+.ajuda-form textarea {
+    width: 100%;
+    background: #f7f9ee;
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    color: #1f2937;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+}
+
+
+.ajuda-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%201f2937' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    padding-right: 42px;
+}
+
+
+.ajuda-form input:focus,
+.ajuda-form select:focus,
+.ajuda-form textarea:focus {
+    border-color: #0e7bb8;
+    box-shadow: 0 0 0 3px rgba(14, 123, 184, 0.15);
+}
+
+.ajuda-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+
+.btn-enviar-ajuda {
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px;
+    background: #ff6b00;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+}
+
+.btn-enviar-ajuda:hover {
+    background: #e85f00;
+    transform: translateY(-2px);
+}
+
+.btn-enviar-ajuda:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .ajuda-main {
+        margin: 30px 16px;
+        padding: 28px 20px;
+    }
+
+    .ajuda-topo h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-enviar-ajuda {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+.ajuda-header {
+    width: min(820px, 100%);
+    margin: 0 auto;
+    padding: 42px 30px 0;
+}
+
+.ajuda-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    color: #fff;
+    background: #0e7bb8;
+    border: 1px solid rgba(7, 89, 133, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ajuda-home-link span {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.ajuda-home-link:hover {
+    background: #09699f;
+    box-shadow: 0 9px 22px rgba(15, 23, 42, 0.16);
+    transform: translateY(-2px);
+}
+
+.ajuda-home-link:focus-visible {
+    outline: 3px solid #ffb36f;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .ajuda-header {
+        padding: 28px 20px 0;
+    }
+}

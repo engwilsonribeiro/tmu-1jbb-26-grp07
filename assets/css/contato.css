@@ -1,115 +1,178 @@
+
+/* Configuração geral da página */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Inclui bordas e espaços no tamanho dos elementos */
 }
 
 body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 64px 20px;
-    background: #f4f1e8;
-    color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh; /* Faz a página ocupar pelo menos a altura da tela */
+    margin: 0; /* Remove a margem padrão */
+    padding: 40px 20px; /* Adiciona espaço interno na página */
+    background: #f4f1e8; /* Define o fundo bege */
+    color: #1f2937; /* Define a cor principal do texto */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte dos textos */
 }
 
-body > h1,
-body > p,
-body > form {
-    width: min(100%, 680px);
-    margin-right: auto;
-    margin-left: auto;
+/* Área principal do perfil */
+.perfil-main {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 680px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza a área na página */
 }
 
-body > h1 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    color: #121212;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 800;
-    text-align: center;
+/* Cabeçalho do perfil */
+.perfil-topo {
+    margin-bottom: 30px; /* Cria espaço abaixo do cabeçalho */
+    text-align: center; /* Centraliza o texto */
 }
 
-body > p {
-    margin-top: 0;
-    margin-bottom: 30px;
-    color: #4b5563;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    text-align: center;
+.perfil-topo h1 {
+    margin: 15px 0 10px; /* Define os espaços ao redor do título */
+    color: #121212; /* Define a cor do título */
+    font-size: 32px; /* Define o tamanho do título */
+    font-weight: 800; /* Deixa o título bem destacado */
 }
 
-body > form {
-    display: flex;
-    flex-direction: column;
-    padding: 36px;
-    background: #fff;
-    border: 1px solid rgba(17, 17, 17, 0.08);
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+.perfil-topo p {
+    margin: 0; /* Remove as margens do parágrafo */
+    color: #6b7280; /* Define a cor do texto de descrição */
+    font-size: 15px; /* Define o tamanho do texto */
+    line-height: 1.6; /* Melhora o espaço entre as linhas */
 }
 
-form label {
-    margin-bottom: 8px;
-    color: #1f2937;
-    font-size: 0.95rem;
-    font-weight: 700;
+/* Área da foto do perfil */
+.avatar-container {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza a foto horizontalmente */
+    margin: 0 auto; /* Centraliza o contêiner */
 }
 
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    margin-bottom: 22px;
-    padding: 14px 16px;
-    color: #1f2937;
-    background: #f7f9ee;
-    border: 2px solid #d1d5db;
-    border-radius: 12px;
-    font: inherit;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.avatar-perfil {
+    display: flex; /* Permite organizar o conteúdo */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    width: 100px; /* Define a largura da foto */
+    height: 100px; /* Define a altura da foto */
+    background: #ff6b00; /* Define o fundo laranja */
+    color: white; /* Define a cor do texto */
+    border: 4px solid white; /* Adiciona uma borda branca */
+    border-radius: 50%; /* Deixa o espaço circular */
+    box-shadow: 0 4px 12px #00000015; /* Adiciona uma sombra suave */
+    font-size: 40px; /* Define o tamanho do texto da foto */
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
-form input:focus,
-form textarea:focus {
-    border-color: #0e7bb8;
-    box-shadow: 0 0 0 3px rgba(14, 123, 184, 0.15);
+/* Aparência do formulário */
+.perfil-form {
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os campos em coluna */
+    gap: 20px; /* Cria espaço entre os campos */
+    padding: 32px; /* Adiciona espaço interno */
+    background: white; /* Define o fundo branco */
+    border: 1px solid #e5e7eb; /* Adiciona uma borda cinza clara */
+    border-radius: 18px; /* Arredonda os cantos */
+    box-shadow: 0 8px 25px #0000000d; /* Adiciona uma sombra suave */
 }
 
-form textarea {
-    min-height: 150px;
-    resize: vertical;
+/* Organização dos campos */
+.form-group {
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Coloca o rótulo acima do campo */
+    gap: 8px; /* Define o espaço entre o rótulo e o campo */
 }
 
-form button[type="submit"] {
-    width: 100%;
-    padding: 15px 18px;
-    color: #fff;
-    background: #ff6b00;
-    border: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
-    font: inherit;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+.form-group label {
+    color: #374151; /* Define a cor dos rótulos */
+    font-size: 14px; /* Define o tamanho dos rótulos */
+    font-weight: bold; /* Deixa os rótulos em negrito */
 }
 
-form button[type="submit"]:hover {
-    background: #e85f00;
-    transform: translateY(-2px);
+.form-group input {
+    width: 100%; /* Faz o campo ocupar toda a largura disponível */
+    padding: 13px 14px; /* Adiciona espaço dentro do campo */
+    background: #fafaf8; /* Define o fundo do campo */
+    border: 1px solid #d1d5db; /* Adiciona uma borda cinza */
+    border-radius: 10px; /* Arredonda os cantos do campo */
+    outline: none; /* Remove o contorno padrão do navegador */
+    font: inherit; /* Usa a mesma fonte do elemento pai */
+    transition: 0.2s; /* Suaviza as mudanças visuais */
 }
 
-form button[type="submit"]:active {
-    transform: translateY(0);
+/* Efeito ao selecionar um campo */
+.form-group input:focus {
+    background: white; /* Deixa o fundo branco ao selecionar */
+    border-color: #ff6b00; /* Muda a borda para laranja */
+    box-shadow: 0 0 0 3px #ff6b0020; /* Destaca o campo selecionado */
 }
 
+.form-group input::placeholder {
+    color: #9ca3af; /* Define a cor do texto de dica */
+}
+
+/* Organização dos botões */
+.form-actions {
+    display: flex; /* Coloca os botões lado a lado */
+    gap: 12px; /* Cria espaço entre os botões */
+    margin-top: 8px; /* Adiciona espaço acima dos botões */
+}
+
+.form-actions button {
+    flex: 1; /* Faz os botões dividirem o espaço igualmente */
+    padding: 13px 16px; /* Define o espaço interno dos botões */
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Arredonda os cantos */
+    font-size: 14px; /* Define o tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Mostra a mão ao passar sobre o botão */
+    transition: 0.2s; /* Suaviza os efeitos dos botões */
+}
+
+/* Botão de salvar alterações */
+.btn-salvar {
+    background: #ff6b00; /* Define o fundo laranja */
+    color: white; /* Define o texto branco */
+}
+
+.btn-salvar:hover {
+    background: #e85f00; /* Escurece o botão ao passar o mouse */
+    transform: translateY(-2px); /* Move o botão um pouco para cima */
+}
+
+/* Botão de sair da conta */
+.btn-cancelar {
+    background: #f3f4f6; /* Define o fundo cinza claro */
+    color: #374151; /* Define a cor do texto */
+}
+
+.btn-cancelar:hover {
+    background: #e5e7eb; /* Escurece o fundo ao passar o mouse */
+}
+
+/* Efeito ao clicar nos botões */
+button:active {
+    transform: scale(0.98); /* Diminui levemente o botão ao clicar */
+}
+
+/* Ajustes para telas pequenas */
 @media (max-width: 600px) {
     body {
-        padding: 36px 16px;
+        padding: 25px 14px; /* Reduz os espaços em celulares */
     }
 
-    body > form {
-        padding: 26px 20px;
+    .perfil-topo h1 {
+        font-size: 26px; /* Diminui o título em telas pequenas */
+    }
+
+    .perfil-form {
+        padding: 22px 18px; /* Reduz o espaço interno do formulário */
+    }
+
+    .form-actions {
+        flex-direction: column; /* Coloca os botões um abaixo do outro */
+    }
+
+    .form-actions button {
+        width: 100%; /* Faz o botão ocupar toda a largura */
+        min-height: 45px; /* Facilita o toque no celular */
     }
 }

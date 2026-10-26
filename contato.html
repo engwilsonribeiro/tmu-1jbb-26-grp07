@@ -1,44 +1,92 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/contato.css">
-    <title>Meu Perfil</title>
-</head>
-<body>
 
-    <main class="perfil-main">
-        <section class="perfil-topo">
-            <div class="avatar-container">
-                <div class="avatar-perfil" id="avatar-inicial">U</div>
-                <button type="button" class="btn-alterar-foto" title="Alterar Foto">&#128247;</button>
-            </div>
-            <h1 id="titulo-nome">Carregando...</h1>
-            <p>Gerencie suas informações pessoais e preferências da conta</p>
-        </section>
+<!DOCTYPE html> <!-- Define o documento como HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma como português brasileiro -->
 
-        <form id="perfil-form" class="perfil-form">
-            <div class="form-group">
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" name="nome" required>
+<head> <!-- Inicia as configurações da página -->
+    <meta charset="UTF-8"> <!-- Permite usar acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adapta a página para celulares -->
+
+    <link rel="stylesheet" href="./assets/css/contato.css"> <!-- Conecta o arquivo CSS -->
+    <title>Meu Perfil</title> <!-- Define o título da aba do navegador -->
+</head> <!-- Finaliza as configurações -->
+
+<body> <!-- Inicia o conteúdo visível da página -->
+
+    <main class="perfil-main"> <!-- Área principal do perfil -->
+
+        <section class="perfil-topo"> <!-- Seção do cabeçalho do perfil -->
+
+            <div class="avatar-container"> <!-- Área que contém a foto -->
+                <div class="avatar-perfil" id="avatar-inicial"> <!-- Espaço da foto do usuário -->
+                    foto
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+            <h1 id="titulo-nome">Meu Perfil</h1> <!-- Título principal do perfil -->
+
+            <p> <!-- Inicia o texto de apresentação -->
+                Gerencie suas informações pessoais
+                e preferências da conta.
+            </p> <!-- Finaliza o texto de apresentação -->
+
+        </section> <!-- Finaliza o cabeçalho do perfil -->
+
+        <form id="perfil-form" class="perfil-form"> <!-- Cria o formulário de dados -->
+
+            <div class="form-group"> <!-- Agrupa o campo de nome -->
+                <label for="nome">Nome completo:</label> <!-- Identifica o campo de nome -->
+
+                <input
+                    type="text" 
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome completo"
+                    autocomplete="name"
+                    required> <!-- Campo de texto obrigatório para o nome -->
             </div>
 
-            <div class="form-group">
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            <div class="form-group"> <!-- Agrupa o campo de e-mail -->
+                <label for="email">E-mail:</label> <!-- Identifica o campo de e-mail -->
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seuemail@exemplo.com"
+                    autocomplete="email"
+                    required> <!-- Campo obrigatório que valida o formato do e-mail -->
             </div>
 
-            <div class="form-actions">
-                <button type="submit" class="btn-salvar">Salvar Alterações</button>
-                <button type="button" class="btn-cancelar" id="btn-logout">Sair da Conta</button>
+            <div class="form-group"> <!-- Agrupa o campo de telefone -->
+                <label for="telefone">Telefone:</label> <!-- Identifica o campo de telefone -->
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(00) 00000-0000"
+                    autocomplete="tel"> <!-- Campo para digitar o telefone -->
             </div>
-        </form>
-    </main>
-</body>
-</html>
+
+            <div class="form-actions"> <!-- Agrupa os botões do formulário -->
+
+                <button type="submit" class="btn-salvar"> <!-- Botão que envia o formulário -->
+                    Salvar alterações
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-cancelar"
+                    id="btn-logout"> <!-- Botão preparado para sair da conta -->
+                    Sair da conta
+                </button>
+
+            </div> <!-- Finaliza a área dos botões -->
+
+        </form> <!-- Finaliza o formulário -->
+
+    </main> <!-- Finaliza a área principal -->
+
+</body> <!-- Finaliza o conteúdo da página -->
+
+</html> <!-- Finaliza o documento HTML -->

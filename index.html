@@ -1,492 +1,342 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AltaMaré | Produtos de Praia</title>
-    <link rel="stylesheet" href="./assets/estilo.css" />
-    <link
-      rel="stylesheet"
-      href="./assets/font-awesome-4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-      <div class="logo">Alta<span>Maré</span></div>
-      <nav class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#categorias">Categorias</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#sobre">Sobre nós</a>
-        <a href="contato.html">Contato</a>
-        <a href="#ajuda">Ajuda</a>
-      </nav>
-      <div class="header-acoes">
-        <button onclick="abrirBusca()" class="icone" aria-label="Abrir busca">
-          <img src="./assets/imagens/lupa.png" alt="" class="icone-imagem" />
-        </button>
-        <button
-          onclick="abrirCarrinho()"
-          class="icone carrinho"
-          aria-label="Abrir carrinho"
-        >
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-          <span id="contador">0</span>
-        </button>
 
-        <!-- <button
-          type="button"
-          class="icone"
-          aria-label="Perfil"
-          onclick="location.href = 'perfil.html'"
-        >
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
-        </button> -->
+<!doctype html> <!-- Define que o documento utiliza HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma da página -->
+<head> <!-- Inicia as configurações do documento -->
+    <meta charset="UTF-8" /> <!-- Permite utilizar acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Adapta o site para celulares -->
+    <title>Biomar | Produtos de Praia</title> <!-- Define o título da aba -->
+    <link rel="stylesheet" href="./assets/estilo.css" /> <!-- Conecta o arquivo CSS -->
+    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css" /> <!-- Importa os ícones -->
 
-        <a href="perfil.html" class="icone" aria-label="Perfil">
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
-        </a>
+</head> <!-- Fecha as configurações -->
+<body> <!-- Inicia o conteúdo visível do site -->
 
+    <!-- HEADER: Cabeçalho do site -->
+    <header class="header"> <!-- Cria o cabeçalho principal -->
+        <div class="logo"> <!-- Cria a área da logo -->
+            <img src="./assets/imagens/logo-removebg-preview.png" alt="" class="logo-imagem" /> <!-- Exibe a imagem da logo -->
+            Bio<span>Mar</span> <!-- Exibe o nome da loja -->
+        </div> <!-- Fecha a logo -->
 
+        <nav class="menu"> <!-- Cria o menu de navegação -->
+            <a href="#inicio">Início</a> <!-- Direciona para o início -->
+            <a href="#categorias">Categorias</a> <!-- Direciona para as categorias -->
+            <a href="#produtos">Produtos</a> <!-- Direciona para os produtos -->
+            <a href="#sobre">Sobre nós</a> <!-- Direciona para a apresentação da empresa -->
+            <a href="contato.html">Contato</a> <!-- Abre a página de contato -->
+            <a href="#ajuda">Ajuda</a> <!-- Direciona para a área de ajuda -->
+        </nav> <!-- Fecha o menu -->
 
-      </div>
-    </header>
-    <!-- ================= BUSCA ================= -->
-    <div id="barraBusca" class="barra-busca">
-      <input
-        type="text"
-        id="campoBusca"
-        placeholder="O que você está procurando?"
-        onkeyup="buscarProdutos()"
-      />
-      <button onclick="fecharBusca()" aria-label="Fechar busca">
-        <img src="./assets/imagens/lupa.png" alt="" class="icone-imagem" />
-      </button>
-    </div>
-    <!-- ================= HERO ================= -->
-    <section id="inicio" class="hero">
-      <div class="hero-conteudo">
-        <p class="pequeno-titulo">COLEÇÃO VERÃO 2026</p>
-        <h1>
-          Viva o verão<br />
-          do seu jeito.
-        </h1>
-        <p>
-          Produtos para praia, piscina e todos os momentos que merecem ser
-          aproveitados.
-        </p>
-        <a href="#produtos" class="botao-principal"> Comprar agora → </a>
-      </div>
-    </section>
-    <!-- ================= CATEGORIAS ================= -->
-    <section id="categorias" class="categorias">
-      <div class="titulo-secao">
-        <p>EXPLORE</p>
-        <h2>Encontre seu estilo</h2>
-      </div>
-      <div class="categorias-grid">
-        <button class="categoria" onclick="filtrarCategoria('joias')">
-          <div class="categoria-imagem joias">
-            <img
-              src="./assets/imagens/joia sem fundo.png"
-              alt="Joias"
-              class="imagem-categoria"
-            />
-          </div>
-          <h3>Joias</h3>
-          <span>Ver produtos →</span>
-        </button>
-        <button class="categoria" onclick="filtrarCategoria('cangas')">
-          <div class="categoria-imagem cangas">
-            <img
-              src="./assets/imagens/canga sem fundo.png"
-              alt="Cangas"
-              class="imagem-categoria"
-            />
-          </div>
-          <h3>Cangas</h3>
-          <span>Ver produtos →</span>
-        </button>
-        <button class="categoria" onclick="filtrarCategoria('bolsas')">
-          <div class="categoria-imagem bolsas">
-            <img
-              src="./assets/imagens/bolsapraia.png"
-              alt="Bolsas"
-              class="imagem-categoria"
-            />
-          </div>
-          <h3>Bolsas</h3>
-          <span>Ver produtos →</span>
-        </button>
-        <button class="categoria" onclick="filtrarCategoria('toalhas')">
-          <div class="categoria-imagem toalhas">
-            <img
-              src="./assets/imagens/toalha summer.png"
-              alt="Toalhas"
-              class="imagem-categoria"
-            />
-          </div>
-          <h3>Toalhas</h3>
-          <span>Ver produtos →</span>
-        </button>
-        <button class="categoria" onclick="filtrarCategoria('garrafas')">
-          <div class="categoria-imagem garrafas">
-            <img
-              src="./assets/imagens/garrafa.png"
-              alt="Garrafas"
-              class="imagem-categoria"
-            />
-          </div>
-          <h3>Garrafas</h3>
-          <span>Ver produtos →</span>
-        </button>
-      </div>
-    </section>
-    <!-- ================= PRODUTOS ================= -->
-    <main id="produtos" class="produtos">
-      <div class="produtos-topo">
-        <div>
-          <p class="pequeno-titulo">NOSSA LOJA</p>
-          <h2>Produtos em destaque</h2>
-        </div>
-        <button onclick="mostrarTodos()" class="botao-todos">
-          Ver todos →
-        </button>
-      </div>
-      <div id="listaProdutos" class="produtos-grid">
-        <!-- PRODUTO 1 -->
-        <article
-          class="produto"
-          data-categoria="bolsas"
-          data-nome="Bolsa Praia Breeze"
-        >
-          <div class="produto-imagem imagem-bolsa">
-            <span class="etiqueta"> -20% </span>
+        <div class="header-acoes"> <!-- Agrupa os botões do cabeçalho -->
+            <button onclick="abrirBusca()" class="icone" aria-label="Abrir busca"> <!-- Abre a pesquisa -->
+                <img src="./assets/imagens/lupa.png" alt="" class="icone-imagem" /> <!-- Exibe o ícone de pesquisa -->
+            </button> <!-- Fecha o botão de pesquisa -->
 
-            <div
-              class="produto-desenho"
-              style="
-                background-image: url(&quot;./assets/imagens/bolsapraia.png&quot;);
-                background-size: cover;
-                background-position: center;
-              "
-            ></div>
+            <button onclick="alternarCarrinho()" class="icone carrinho" id="botaoCarrinho" aria-label="Abrir carrinho"> <!-- Abre ou fecha o carrinho -->
+                <i id="iconeCarrinho" class="fa fa-shopping-bag" aria-hidden="true"></i> <!-- Exibe o ícone da sacola -->
+                <span id="contador">0</span> <!-- Mostra a quantidade de produtos -->
+            </button> <!-- Fecha o botão do carrinho -->
 
-            <!-- 
-               <div class="produto-desenho">
-              <img
-                src="./assets/imagens/bolsa praia.png" 
-                alt="Bolsa Praia Breeze"
-                class="imagem-produto"
-              />
-            </div>
-           -->
-          </div>
-          <div class="produto-info">
-            <span class="categoria-produto"> BOLSAS </span>
-            <h3>Bolsa Praia Breeze</h3>
-            <div class="avaliacao">
-              ★★★★★
-              <span>(128)</span>
-            </div>
-            <div class="precos">
-              <span class="preco-antigo"> R$ 249,90 </span>
-              <strong> R$ 199,90 </strong>
-            </div>
-            <button
-              class="botao-comprar"
-              onclick="adicionarCarrinho('Bolsa Praia Breeze', 199.9)"
-            >
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </article>
-        <!-- PRODUTO 2 -->
-        <article
-          class="produto"
-          data-categoria="cangas"
-          data-nome="Canga Sunset"
-        >
-          <div class="produto-imagem imagem-canga">
-            <span class="etiqueta"> NOVO </span>
-            <div
-              class="produto-desenho"
-              style="
-                background-image: url(&quot;./assets/imagens/canga sem fundo.png&quot;);
-                background-size: cover;
-                background-position: center;
-              "
-            ></div>
-          </div>
-          <div class="produto-info">
-            <span class="categoria-produto"> CANGAS </span>
-            <h3>Canga Sunset</h3>
-            <div class="avaliacao">
-              ★★★★★
-              <span>(94)</span>
-            </div>
-            <div class="precos">
-              <strong> R$ 89,90 </strong>
-            </div>
-            <button
-              class="botao-comprar"
-              onclick="adicionarCarrinho('Canga Sunset', 89.9)"
-            >
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </article>
-        <!-- PRODUTO 3 -->
-        <article class="produto" data-categoria="joias" data-nome="Colar Ocean">
-          <div class="produto-imagem imagem-joia">
-            <span class="etiqueta"> NOVO </span>
-            <div
-              class="produto-desenho"
-              style="
-                background-image: url(&quot;./assets/imagens/joia sem fundo.png&quot;);
-                background-size: cover;
-                background-position: center;
-              "
-            ></div>
-          </div>
-          <div class="produto-info">
-            <span class="categoria-produto"> JOIAS </span>
-            <h3>Colar Ocean</h3>
-            <div class="avaliacao">
-              ★★★★★
-              <span>(76)</span>
-            </div>
-            <div class="precos">
-              <strong> R$ 119,90 </strong>
-            </div>
-            <button
-              class="botao-comprar"
-              onclick="adicionarCarrinho('Colar Ocean', 119.9)"
-            >
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </article>
-        <!-- PRODUTO 4 -->
-        <article
-          class="produto"
-          data-categoria="toalhas"
-          data-nome="Toalha Summer"
-        >
-          <div class="produto-imagem imagem-toalha">
-            <span class="etiqueta"> -15% </span>
-            <div
-              class="produto-desenho"
-              style="
-                background-image: url(&quot;./assets/imagens/toalha summer.png&quot;);
-                background-size: cover;
-                background-position: center;
-              "
-            ></div>
-          </div>
-          <div class="produto-info">
-            <span class="categoria-produto"> TOALHAS </span>
-            <h3>Toalha Summer</h3>
-            <div class="avaliacao">
-              ★★★★★
-              <span>(211)</span>
-            </div>
-            <div class="precos">
-              <span class="preco-antigo"> R$ 139,90 </span>
-              <strong> R$ 119,90 </strong>
-            </div>
-            <button
-              class="botao-comprar"
-              onclick="adicionarCarrinho('Toalha Summer', 119.9)"
-            >
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </article>
-        <!-- PRODUTO 5 -->
-        <article
-          class="produto"
-          data-categoria="garrafas"
-          data-nome="Garrafa Ocean"
-        >
-          <div
-            class="produto-imagem imagem-garrafa"
-            style="
-              background-image: url(&quot;./assets/imagens/garrafa.png&quot;);
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <span class="etiqueta"> MAIS VENDIDO </span>
-          </div>
-          <div class="produto-info">
-            <span class="categoria-produto"> GARRAFAS </span>
-            <h3>Garrafa Ocean</h3>
-            <div class="avaliacao">
-              ★★★★★
-              <span>(328)</span>
-            </div>
-            <div class="precos">
-              <strong> R$ 79,90 </strong>
-            </div>
-            <button
-              class="botao-comprar"
-              onclick="adicionarCarrinho('Garrafa Ocean', 79.9)"
-            >
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </article>
-        <!-- PRODUTO 6 -->
-        <article
-          class="produto"
-          data-categoria="bolsas"
-          data-nome="Bolsa Coast"
-        >
-          <div class="produto-imagem imagem-coast">
-            <span class="etiqueta"> -18% </span>
+            <a href="perfil.html" class="icone" aria-label="Perfil"> <!-- Direciona para o perfil -->
+                <i class="fa fa-user-circle" aria-hidden="true"></i> <!-- Exibe o ícone de usuário -->
+            </a> <!-- Fecha o link do perfil -->
+        </div> <!-- Fecha as ações do cabeçalho -->
+    </header> <!-- Fecha o cabeçalho -->
 
-            <div
-              class="produto-desenho"
-              style="
-                background-image: url(&quot;./assets/imagens/bolsamarrom.png&quot;);
-                background-size: cover;
-                background-position: center;
-              "
-            ></div>
-          </div>
-          <div class="produto-info">
-            <span class="categoria-produto"> BOLSAS </span>
-            <h3>Bolsa Coast</h3>
-            <div class="avaliacao">
-              ★★★★★
-              <span>(156)</span>
-            </div>
-            <div class="precos">
-              <span class="preco-antigo"> R$ 299,90 </span>
-              <strong> R$ 244,90 </strong>
-            </div>
-            <button
-              class="botao-comprar"
-              onclick="adicionarCarrinho('Bolsa Coast', 244.9)"
-            >
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </article>
-      </div>
-      <p id="semResultado" class="sem-resultado">Nenhum produto encontrado.</p>
-    </main>
-    <!-- ================= BANNER ================= -->
-    <section class="banner">
-      <div>
-        <p>SEU VERÃO, SUA HISTÓRIA</p>
-        <h2>
-          Leve o essencial.<br />
-          Viva o extraordinário.
-        </h2>
-        <a href="#produtos"> Explorar produtos → </a>
-      </div>
-    </section>
-    <!-- ================ SOBRE ================= -->
-    <section id="sobre" class="sobre">
-      <div class="sobre-texto">
-        <p class="pequeno-titulo">SOBRE A ALTAMARÉ</p>
-        <h2>
-          Mais que produtos de praia.
-          <span>Um jeito leve de viver.</span>
-        </h2>
-        <p>
-          A AltaMaré nasceu para transformar os momentos de praia em
-          experiências ainda mais especiais. Criamos produtos bonitos,
-          funcionais e feitos para acompanhar você em todos os seus dias de
-          verão.
-        </p>
-      </div>
-      <div class="sobre-numeros">
-        <div>
-          <strong>01</strong>
-          <span> Estilo que combina com você </span>
-        </div>
-        <div>
-          <strong>02</strong>
-          <span> Qualidade para todos os dias </span>
-        </div>
-        <div>
-          <strong>03</strong>
-          <span> Momentos que ficam na memória </span>
-        </div>
-      </div>
-    </section>
-    <!-- ================= NEWSLETTER ================= -->
-    <section class="newsletter">
-      <div>
-        <p>FIQUE POR DENTRO</p>
-        <h2>Receba novidades da AltaMaré</h2>
-        <span>
-          Lançamentos, promoções e novidades diretamente no seu e-mail.
-        </span>
-      </div>
-      <form onsubmit="inscrever(event)">
-        <input
-          type="email"
-          id="email"
-          placeholder="Seu melhor e-mail"
-          required
-        />
-        <button type="submit">Cadastrar →</button>
-      </form>
-    </section>
-    <!-- ================ FOOTER ================= -->
-    <footer class="footer">
-      <div class="footer-logo">
-        Alta<span>Maré</span>
-        <p>Seu verão começa aqui.</p>
-      </div>
-      <div class="footer-coluna">
-        <h3>Loja</h3>
-        <a href="#produtos">Produtos</a>
-        <a href="#categorias">Categorias</a>
-        <a href="#sobre">Sobre nós</a>
-      </div>
-      <div class="footer-coluna">
-        <h3>Atendimento</h3>
-        <a id="contato" href="#">Contato</a>
-        <a id="ajuda" href="#">Ajuda</a>
-        <a href="#">Trocas e devoluções</a>
-      </div>
-      <div class="footer-coluna">
-        <h3>Redes sociais</h3>
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">Facebook</a>
-      </div>
-    </footer>
-    <div class="copyright">© 2026 AltaMaré — Todos os direitos reservados.</div>
-    <!-- ================= MODAL CARRINHO ================= -->
-    <div id="modalCarrinho" class="modal">
-      <div class="modal-conteudo">
-        <button
-          class="fechar"
-          onclick="fecharCarrinho()"
-          aria-label="Fechar carrinho"
-        >
-          <img src="./assets/imagens/joia.png" alt="" class="icone-imagem" />
-        </button>
-        <h2>Seu carrinho</h2>
-        <div id="listaCarrinho">
-          <p class="carrinho-vazio">Seu carrinho está vazio.</p>
-        </div>
-        <div class="total">
-          <span> Total </span>
-          <strong id="total"> R$ 0,00 </strong>
-        </div>
-        <button class="finalizar" onclick="finalizarCompra()">
-          Finalizar compra
-        </button>
-      </div>
-    </div>
-    <script src="./assets/maquina.js"></script>
-  </body>
-</html>
+    <!-- BUSCA: Barra de pesquisa -->
+    <div id="barraBusca" class="barra-busca"> <!-- Cria a barra de pesquisa -->
+        <input type="text" id="campoBusca" placeholder="O que você está procurando?" onkeyup="buscarProdutos()" /> <!-- Permite pesquisar produtos enquanto digita -->
+        <button onclick="fecharBusca()" aria-label="Fechar busca"> <!-- Fecha a pesquisa -->
+            <img src="./assets/imagens/lupa.png" alt="" class="icone-imagem" /> <!-- Exibe o ícone de lupa -->
+        </button> <!-- Fecha o botão -->
+    </div> <!-- Fecha a barra de pesquisa -->
+
+    <!-- HERO: Banner principal -->
+    <section id="inicio" class="hero"> <!-- Cria o banner principal -->
+        <div class="hero-conteudo"> <!-- Agrupa os textos do banner -->
+            <p class="pequeno-titulo">COLEÇÃO VERÃO 2026</p> <!-- Identifica a coleção -->
+            <h1>A vida começa<br />no verão.</h1> <!-- Exibe o título principal -->
+            <p>Produtos para praia, piscina e todos os momentos que merecem ser aproveitados.</p> <!-- Apresenta a proposta da loja -->
+            <a href="#produtos" class="botao-principal">Comprar agora →</a> <!-- Leva aos produtos -->
+        </div> <!-- Fecha o conteúdo do banner -->
+    </section> <!-- Fecha o banner principal -->
+
+    <!-- CATEGORIAS: Tipos de produtos -->
+    <section id="categorias" class="categorias"> <!-- Cria a seção de categorias -->
+        <div class="titulo-secao"> <!-- Agrupa o título -->
+            <p>EXPLORE</p> <!-- Exibe uma chamada -->
+            <h2>Encontre seu estilo</h2> <!-- Apresenta o título das categorias -->
+        </div> <!-- Fecha o título -->
+
+        <div class="categorias-grid"> <!-- Organiza as categorias em uma grade -->
+
+            <button class="categoria" onclick="filtrarCategoria('joias')"> <!-- Filtra os produtos de joias -->
+                <div class="categoria-imagem joias"> <!-- Cria a área da imagem -->
+                    <img src="./assets/imagens/joia sem fundo.png" alt="Joias" class="imagem-categoria" /> <!-- Exibe a imagem das joias -->
+                </div> <!-- Fecha a imagem -->
+                <h3>Joias</h3> <!-- Exibe o nome da categoria -->
+                <span>Ver produtos →</span> <!-- Indica que existem produtos -->
+            </button> <!-- Fecha a categoria -->
+
+            <button class="categoria" onclick="filtrarCategoria('cangas')"> <!-- Filtra os produtos de cangas -->
+                <div class="categoria-imagem cangas"> <!-- Cria a área da imagem -->
+                    <img src="./assets/imagens/canga sem fundo.png" alt="Cangas" class="imagem-categoria" /> <!-- Exibe a imagem das cangas -->
+                </div> <!-- Fecha a imagem -->
+                <h3>Cangas</h3> <!-- Exibe o nome da categoria -->
+                <span>Ver produtos →</span> <!-- Indica que existem produtos -->
+            </button> <!-- Fecha a categoria -->
+
+            <button class="categoria" onclick="filtrarCategoria('bolsas')"> <!-- Filtra os produtos de bolsas -->
+                <div class="categoria-imagem bolsas"> <!-- Cria a área da imagem -->
+                    <img src="./assets/imagens/bolsapraia.png" alt="Bolsas" class="imagem-categoria" /> <!-- Exibe a imagem das bolsas -->
+                </div> <!-- Fecha a imagem -->
+                <h3>Bolsas</h3> <!-- Exibe o nome da categoria -->
+                <span>Ver produtos →</span> <!-- Indica que existem produtos -->
+            </button> <!-- Fecha a categoria -->
+
+            <button class="categoria" onclick="filtrarCategoria('toalhas')"> <!-- Filtra os produtos de toalhas -->
+                <div class="categoria-imagem toalhas"> <!-- Cria a área da imagem -->
+                    <img src="./assets/imagens/toalha summer.png" alt="Toalhas" class="imagem-categoria" /> <!-- Exibe a imagem das toalhas -->
+                </div> <!-- Fecha a imagem -->
+                <h3>Toalhas</h3> <!-- Exibe o nome da categoria -->
+                <span>Ver produtos →</span> <!-- Indica que existem produtos -->
+            </button> <!-- Fecha a categoria -->
+
+            <button class="categoria" onclick="filtrarCategoria('garrafas')"> <!-- Filtra os produtos de garrafas -->
+                <div class="categoria-imagem garrafas"> <!-- Cria a área da imagem -->
+                    <img src="./assets/imagens/garrafa.png" alt="Garrafas" class="imagem-categoria" /> <!-- Exibe a imagem das garrafas -->
+                </div> <!-- Fecha a imagem -->
+                <h3>Garrafas</h3> <!-- Exibe o nome da categoria -->
+                <span>Ver produtos →</span> <!-- Indica que existem produtos -->
+            </button> <!-- Fecha a categoria -->
+
+        </div> <!-- Fecha a grade de categorias -->
+    </section> <!-- Fecha as categorias -->
+
+    <!-- PRODUTOS: Vitrine da loja -->
+    <main id="produtos" class="produtos"> <!-- Cria a área principal dos produtos -->
+        <div class="produtos-topo"> <!-- Agrupa o título e o botão -->
+            <div> <!-- Cria a área do título -->
+                <p class="pequeno-titulo">NOSSA LOJA</p> <!-- Identifica a loja -->
+                <h2>Produtos em destaque</h2> <!-- Apresenta o título -->
+            </div> <!-- Fecha o título -->
+            <button onclick="mostrarTodos()" class="botao-todos">Ver todos →</button> <!-- Mostra todos os produtos -->
+        </div> <!-- Fecha o topo -->
+
+        <div id="listaProdutos" class="produtos-grid"> <!-- Cria a grade de produtos -->
+
+            <!-- PRODUTO 1: Bolsa Praia Breeze -->
+            <article class="produto" data-categoria="bolsas" data-nome="Bolsa Praia Breeze"> <!-- Define o produto e sua categoria -->
+                <div class="produto-imagem imagem-bolsa"> <!-- Cria a área da imagem -->
+                    <span class="etiqueta">-20%</span> <!-- Exibe o desconto -->
+                    <div class="produto-desenho" style="background-image: url('./assets/imagens/bolsapraia.png'); background-size: cover; background-position: center;"></div> <!-- Exibe a imagem da bolsa -->
+                </div> <!-- Fecha a imagem -->
+                <div class="produto-info"> <!-- Agrupa as informações -->
+                    <span class="categoria-produto">BOLSAS</span> <!-- Identifica a categoria -->
+                    <h3>Bolsa Praia Breeze</h3> <!-- Exibe o nome -->
+                    <div class="avaliacao">★★★★★ <span>(128)</span></div> <!-- Exibe as avaliações -->
+                    <div class="precos"> <!-- Agrupa os preços -->
+                        <span class="preco-antigo">R$ 249,90</span> <!-- Mostra o preço anterior -->
+                        <strong>R$ 199,90</strong> <!-- Mostra o preço atual -->
+                    </div> <!-- Fecha os preços -->
+                    <button class="botao-comprar" onclick="adicionarCarrinho('Bolsa Praia Breeze', 199.9)">Adicionar ao carrinho</button> <!-- Adiciona a bolsa ao carrinho -->
+                </div> <!-- Fecha as informações -->
+            </article> <!-- Fecha o produto -->
+
+            <!-- PRODUTO 2: Canga Sunset -->
+            <article class="produto" data-categoria="cangas" data-nome="Canga Sunset"> <!-- Define o produto e sua categoria -->
+                <div class="produto-imagem imagem-canga"> <!-- Cria a área da imagem -->
+                    <span class="etiqueta">NOVO</span> <!-- Identifica uma novidade -->
+                    <div class="produto-desenho" style="background-image: url('./assets/imagens/canga sem fundo.png'); background-size: cover; background-position: center;"></div> <!-- Exibe a imagem da canga -->
+                </div> <!-- Fecha a imagem -->
+                <div class="produto-info"> <!-- Agrupa as informações -->
+                    <span class="categoria-produto">CANGAS</span> <!-- Identifica a categoria -->
+                    <h3>Canga Sunset</h3> <!-- Exibe o nome -->
+                    <div class="avaliacao">★★★★★ <span>(94)</span></div> <!-- Exibe as avaliações -->
+                    <div class="precos"> <!-- Agrupa os preços -->
+                        <strong>R$ 89,90</strong> <!-- Exibe o preço -->
+                    </div> <!-- Fecha os preços -->
+                    <button class="botao-comprar" onclick="adicionarCarrinho('Canga Sunset', 89.9)">Adicionar ao carrinho</button> <!-- Adiciona a canga ao carrinho -->
+                </div> <!-- Fecha as informações -->
+            </article> <!-- Fecha o produto -->
+
+            <!-- PRODUTO 3: Colar Ocean -->
+            <article class="produto" data-categoria="joias" data-nome="Colar Ocean"> <!-- Define o produto e sua categoria -->
+                <div class="produto-imagem imagem-joia"> <!-- Cria a área da imagem -->
+                    <span class="etiqueta">NOVO</span> <!-- Identifica uma novidade -->
+                    <div class="produto-desenho" style="background-image: url('./assets/imagens/joia sem fundo.png'); background-size: cover; background-position: center;"></div> <!-- Exibe a imagem do colar -->
+                </div> <!-- Fecha a imagem -->
+                <div class="produto-info"> <!-- Agrupa as informações -->
+                    <span class="categoria-produto">JOIAS</span> <!-- Identifica a categoria -->
+                    <h3>Colar Ocean</h3> <!-- Exibe o nome -->
+                    <div class="avaliacao">★★★★★ <span>(76)</span></div> <!-- Exibe as avaliações -->
+                    <div class="precos"> <!-- Agrupa os preços -->
+                        <strong>R$ 119,90</strong> <!-- Exibe o preço -->
+                    </div> <!-- Fecha os preços -->
+                    <button class="botao-comprar" onclick="adicionarCarrinho('Colar Ocean', 119.9)">Adicionar ao carrinho</button> <!-- Adiciona o colar ao carrinho -->
+                </div> <!-- Fecha as informações -->
+            </article> <!-- Fecha o produto -->
+
+            <!-- PRODUTO 4: Toalha Summer -->
+            <article class="produto" data-categoria="toalhas" data-nome="Toalha Summer"> <!-- Define o produto e sua categoria -->
+                <div class="produto-imagem imagem-toalha"> <!-- Cria a área da imagem -->
+                    <span class="etiqueta">-15%</span> <!-- Exibe o desconto -->
+                    <div class="produto-desenho" style="background-image: url('./assets/imagens/toalha summer.png'); background-size: cover; background-position: center;"></div> <!-- Exibe a imagem da toalha -->
+                </div> <!-- Fecha a imagem -->
+                <div class="produto-info"> <!-- Agrupa as informações -->
+                    <span class="categoria-produto">TOALHAS</span> <!-- Identifica a categoria -->
+                    <h3>Toalha Summer</h3> <!-- Exibe o nome -->
+                    <div class="avaliacao">★★★★★ <span>(211)</span></div> <!-- Exibe as avaliações -->
+                    <div class="precos"> <!-- Agrupa os preços -->
+                        <span class="preco-antigo">R$ 139,90</span> <!-- Mostra o preço anterior -->
+                        <strong>R$ 119,90</strong> <!-- Mostra o preço atual -->
+                    </div> <!-- Fecha os preços -->
+                    <button class="botao-comprar" onclick="adicionarCarrinho('Toalha Summer', 119.9)">Adicionar ao carrinho</button> <!-- Adiciona a toalha ao carrinho -->
+                </div> <!-- Fecha as informações -->
+            </article> <!-- Fecha o produto -->
+
+            <!-- PRODUTO 5: Garrafa Ocean -->
+            <article class="produto" data-categoria="garrafas" data-nome="Garrafa Ocean"> <!-- Define o produto e sua categoria -->
+                <div class="produto-imagem imagem-garrafa" style="background-image: url('./assets/imagens/garrafa.png'); background-size: cover; background-position: center;"> <!-- Exibe a imagem da garrafa -->
+                    <span class="etiqueta">MAIS VENDIDO</span> <!-- Identifica o produto mais vendido -->
+                </div> <!-- Fecha a imagem -->
+                <div class="produto-info"> <!-- Agrupa as informações -->
+                    <span class="categoria-produto">GARRAFAS</span> <!-- Identifica a categoria -->
+                    <h3>Garrafa Ocean</h3> <!-- Exibe o nome -->
+                    <div class="avaliacao">★★★★★ <span>(328)</span></div> <!-- Exibe as avaliações -->
+                    <div class="precos"> <!-- Agrupa os preços -->
+                        <strong>R$ 79,90</strong> <!-- Exibe o preço -->
+                    </div> <!-- Fecha os preços -->
+                    <button class="botao-comprar" onclick="adicionarCarrinho('Garrafa Ocean', 79.9)">Adicionar ao carrinho</button> <!-- Adiciona a garrafa ao carrinho -->
+                </div> <!-- Fecha as informações -->
+            </article> <!-- Fecha o produto -->
+
+            <!-- PRODUTO 6: Bolsa Coast -->
+            <article class="produto" data-categoria="bolsas" data-nome="Bolsa Coast"> <!-- Define o produto e sua categoria -->
+                <div class="produto-imagem imagem-coast"> <!-- Cria a área da imagem -->
+                    <span class="etiqueta">-18%</span> <!-- Exibe o desconto -->
+                    <div class="produto-desenho" style="background-image: url('./assets/imagens/bolsamarrom.png'); background-size: cover; background-position: center;"></div> <!-- Exibe a imagem da bolsa -->
+                </div> <!-- Fecha a imagem -->
+                <div class="produto-info"> <!-- Agrupa as informações -->
+                    <span class="categoria-produto">BOLSAS</span> <!-- Identifica a categoria -->
+                    <h3>Bolsa Coast</h3> <!-- Exibe o nome -->
+                    <div class="avaliacao">★★★★★ <span>(156)</span></div> <!-- Exibe as avaliações -->
+                    <div class="precos"> <!-- Agrupa os preços -->
+                        <span class="preco-antigo">R$ 299,90</span> <!-- Mostra o preço anterior -->
+                        <strong>R$ 244,90</strong> <!-- Mostra o preço atual -->
+                    </div> <!-- Fecha os preços -->
+                    <button class="botao-comprar" onclick="adicionarCarrinho('Bolsa Coast', 244.9)">Adicionar ao carrinho</button> <!-- Adiciona a bolsa ao carrinho -->
+                </div> <!-- Fecha as informações -->
+            </article> <!-- Fecha o produto -->
+
+        </div> <!-- Fecha a grade de produtos -->
+        <p id="semResultado" class="sem-resultado">Nenhum produto encontrado.</p> <!-- Exibe mensagem quando não há resultados -->
+    </main> <!-- Fecha a área dos produtos -->
+
+    <!-- BANNER: Divulgação da loja -->
+    <section class="banner"> <!-- Cria um banner promocional -->
+        <div> <!-- Agrupa o conteúdo -->
+            <p>SEU VERÃO, SUA HISTÓRIA</p> <!-- Exibe a frase promocional -->
+            <h2>Leve o essencial.<br />Viva o extraordinário.</h2> <!-- Apresenta a mensagem principal -->
+            <a href="#produtos">Explorar produtos →</a> <!-- Direciona para os produtos -->
+        </div> <!-- Fecha o conteúdo -->
+    </section> <!-- Fecha o banner -->
+
+    <!-- SOBRE: Apresentação da empresa -->
+    <section id="sobre" class="sobre"> <!-- Cria a seção sobre a Biomar -->
+        <div class="sobre-texto"> <!-- Agrupa os textos institucionais -->
+            <p class="pequeno-titulo">SOBRE A BIOMAR</p> <!-- Identifica a seção -->
+            <h2>Mais que produtos de praia. <span>Um jeito leve de viver.</span></h2> <!-- Apresenta a mensagem da empresa -->
+            <p>A Biomar nasceu para transformar os momentos de praia em experiências ainda mais especiais. Criamos produtos bonitos, funcionais e feitos para acompanhar você em todos os seus dias de verão.</p> <!-- Apresenta a história e a proposta da loja -->
+        </div> <!-- Fecha os textos -->
+
+        <div class="sobre-numeros"> <!-- Agrupa os diferenciais da empresa -->
+            <div> <!-- Cria o primeiro diferencial -->
+                <strong>01</strong> <!-- Exibe a numeração -->
+                <span>A Biomar une estilo e qualidade com sustentabilidade.</span> <!-- Descreve o primeiro diferencial -->
+            </div> <!-- Fecha o primeiro diferencial -->
+
+            <div> <!-- Cria o segundo diferencial -->
+                <strong>02</strong> <!-- Exibe a numeração -->
+                <span>Oferecemos atendimento acessível e estamos sempre prontos para ouvir e ajudar nossos clientes.</span> <!-- Descreve o segundo diferencial -->
+            </div> <!-- Fecha o segundo diferencial -->
+
+            <div> <!-- Cria o terceiro diferencial -->
+                <strong>03</strong> <!-- Exibe a numeração -->
+                <span>Buscamos melhorar nossos produtos e serviços com base na opinião dos clientes.</span> <!-- Descreve o terceiro diferencial -->
+            </div> <!-- Fecha o terceiro diferencial -->
+        </div> <!-- Fecha os diferenciais -->
+    </section> <!-- Fecha a seção sobre -->
+
+    <!-- NEWSLETTER: Cadastro de e-mails -->
+    <section class="newsletter"> <!-- Cria a área de cadastro -->
+        <div> <!-- Agrupa os textos -->
+            <p>FIQUE POR DENTRO</p> <!-- Apresenta uma chamada -->
+            <h2>Receba novidades da Biomar</h2> <!-- Exibe o título -->
+            <span>Lançamentos, promoções e novidades diretamente no seu e-mail.</span> <!-- Explica o benefício do cadastro -->
+        </div> <!-- Fecha os textos -->
+
+        <form onsubmit="inscrever(event)"> <!-- Cria o formulário de inscrição -->
+            <input type="email" id="email" placeholder="Seu melhor e-mail" required /> <!-- Campo obrigatório para digitar o e-mail -->
+            <button type="submit">Cadastrar →</button> <!-- Envia o formulário -->
+        </form> <!-- Fecha o formulário -->
+    </section> <!-- Fecha a newsletter -->
+
+    <!-- FOOTER: Rodapé do site -->
+    <footer class="footer"> <!-- Cria o rodapé -->
+        <div class="footer-logo"> <!-- Cria a área da logo -->
+            Bio<span>mar</span> <!-- Exibe o nome da empresa -->
+            <p>Seu verão começa aqui.</p> <!-- Exibe a frase da marca -->
+        </div> <!-- Fecha a logo -->
+
+        <div class="footer-coluna"> <!-- Cria a coluna da loja -->
+            <h3>Loja</h3> <!-- Define o título da coluna -->
+            <a href="#produtos">Produtos</a> <!-- Link para os produtos -->
+            <a href="#categorias">Categorias</a> <!-- Link para as categorias -->
+            <a href="#sobre">Sobre nós</a> <!-- Link para a apresentação da empresa -->
+        </div> <!-- Fecha a coluna -->
+
+        <div class="footer-coluna"> <!-- Cria a coluna de atendimento -->
+            <h3>Atendimento</h3> <!-- Define o título da coluna -->
+            <a id="contato" href="#">Contato</a> <!-- Link para contato -->
+            <a id="ajuda" href="#">Ajuda</a> <!-- Link para ajuda -->
+            <a href="#">Trocas e devoluções</a> <!-- Link para informações de troca -->
+        </div> <!-- Fecha a coluna -->
+
+        <div class="footer-coluna"> <!-- Cria a coluna de redes sociais -->
+            <h3>Redes sociais</h3> <!-- Define o título da coluna -->
+            <a href="#">Instagram</a> <!-- Link do Instagram -->
+            <a href="#">TikTok</a> <!-- Link do TikTok -->
+            <a href="#">Facebook</a> <!-- Link do Facebook -->
+        </div> <!-- Fecha a coluna -->
+    </footer> <!-- Fecha o rodapé -->
+
+    <div class="copyright">© 2026 Biomar — Todos os direitos reservados.</div> <!-- Exibe os direitos autorais -->
+
+    <!-- MODAL: Janela do carrinho de compras -->
+    <div id="modalCarrinho" class="modal"> <!-- Cria a janela do carrinho -->
+        <div class="modal-conteudo"> <!-- Agrupa o conteúdo interno -->
+
+            <button class="fechar" onclick="fecharCarrinho()" aria-label="Fechar carrinho"> <!-- Cria o botão para fechar -->
+                <i class="fa fa-times" aria-hidden="true"></i> <!-- Exibe o ícone de fechar -->
+            </button> <!-- Fecha o botão -->
+
+            <h2>Seu carrinho</h2> <!-- Exibe o título do carrinho -->
+
+            <div id="listaCarrinho"> <!-- Cria a área dos produtos adicionados -->
+                <p class="carrinho-vazio">Seu carrinho está vazio.</p> <!-- Informa que o carrinho está vazio -->
+            </div> <!-- Fecha a lista -->
+
+            <div class="total"> <!-- Cria a área do valor total -->
+                <span>Total</span> <!-- Identifica o total -->
+                <strong id="total">R$ 0,00</strong> <!-- Exibe o valor da compra -->
+            </div> <!-- Fecha o total -->
+
+            <button class="finalizar" onclick="finalizarCompra()">Finalizar compra</button> <!-- Executa a função de finalizar a compra -->
+        </div> <!-- Fecha o conteúdo do modal -->
+    </div> <!-- Fecha o modal -->
+
+    <script src="./assets/maquina.js"></script> <!-- Conecta o arquivo JavaScript que controla as funções do site -->
+
+</body> <!-- Fecha o corpo da página -->
+</html> <!-- Finaliza o documento HTML -->

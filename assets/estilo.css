@@ -2,123 +2,142 @@
    CONFIGURAÇÕES GERAIS
 ===================================================== */
 
+
+/* CONFIGURAÇÃO GERAL */
+
+/* O asterisco seleciona todos os elementos da página */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove os espaçamentos internos padrão */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Faz a rolagem da página ser suave */
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8f5ef;
-    color: #172f3d;
+    font-family: Arial, Helvetica, sans-serif; /* Define o tipo de letra */
+    background: #f8f5ef; /* Define a cor de fundo da página */
+    color: #172f3d; /* Define a cor padrão dos textos */
 }
 
 button,
 input {
-    font: inherit;
+    font: inherit; /* Faz botões e campos usarem a fonte do restante da página */
 }
 
 button {
-    cursor: pointer;
+    cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /* Remove o sublinhado dos links */
 }
 
 
 /* =====================================================
-   HEADER
+   HEADER - CABEÇALHO
 ===================================================== */
 
 .header {
-    height: 80px;
-    background: #fffdf8;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #e8e2d7;
+    height: 80px; /* Define a altura do cabeçalho */
+    background: #fffdf8; /* Define a cor de fundo */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    justify-content: space-between; /* Distribui os elementos pelo espaço disponível */
+    padding: 0 6%; /* Adiciona espaçamento nas laterais */
+    position: sticky; /* Mantém o cabeçalho fixo durante a rolagem */
+    top: 0; /* Posiciona o cabeçalho no topo */
+    z-index: 1000; /* Coloca o cabeçalho acima de outros elementos */
+    border-bottom: 1px solid #e8e2d7; /* Cria uma borda inferior */
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: 900;
-    color: #123d52;
-    letter-spacing: -2px;
+    display: flex; /* Organiza os elementos da logo em linha */
+    align-items: center; /* Alinha a imagem e o texto verticalmente */
+    gap: 10px; /* Cria espaço entre os elementos */
+    font-size: 40px; /* Define o tamanho do texto */
+    font-weight: 900; /* Deixa o texto bem grosso */
+    color: #123d52; /* Define a cor do texto */
+    letter-spacing: -2px; /* Aproxima as letras */
+    position: sticky; /* Permite posicionamento fixo durante a rolagem */
+    z-index: 9999; /* Coloca a logo em uma camada superior */
+}
+
+.logo-imagem {
+    width: 60px; /* Define a largura da imagem */
+    height: 60px; /* Define a altura da imagem */
+    object-fit: contain; /* Mantém a imagem inteira sem deformar */
+    mix-blend-mode: screen; /* Mistura as cores da imagem com o fundo */
+    top: 0px; /* Define a distância do topo quando o posicionamento é aplicado */
+    border-radius: 25%; /* Arredonda os cantos da imagem */
 }
 
 .logo span {
-    color: #e9794d;
+    color: #e9794d; /* Muda a cor de uma parte do texto da logo */
 }
 
 .menu {
-    display: flex;
-    gap: 35px;
+    display: flex; /* Coloca os links do menu em linha */
+    gap: 35px; /* Define o espaço entre os links */
+    z-index: 0; /* Define a camada de posicionamento do menu */
 }
 
 .menu a {
-    color: #244454;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.3s;
+    color: #244454; /* Define a cor dos links */
+    font-size: 15px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa os links em negrito */
+    transition: 0.3s; /* Suaviza as mudanças visuais */
 }
 
 .menu a:hover {
-    color: #e9794d;
+    color: #e9794d; /* Muda a cor do link quando o mouse passa por cima */
 }
 
 .header-acoes {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Organiza os botões do cabeçalho em linha */
+    gap: 10px; /* Cria espaço entre os botões */
 }
 
 .icone {
-    width: 43px;
-    height: 43px;
-    border-radius: 50%;
-    border: 1px solid #ddd6ca;
-    background: white;
-    position: relative;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 43px; /* Define a largura do botão */
+    height: 43px; /* Define a altura do botão */
+    border-radius: 50%; /* Deixa o botão redondo */
+    border: 1px solid #ddd6ca; /* Cria uma borda fina */
+    background: white; /* Define o fundo branco */
+    position: relative; /* Permite posicionar elementos dentro do botão */
+    transition: 0.3s; /* Suaviza a mudança de aparência */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza o ícone verticalmente */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
 }
 
 .icone-imagem {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    display: block;
+    width: 20px; /* Define a largura do ícone */
+    height: 20px; /* Define a altura do ícone */
+    object-fit: contain; /* Evita deformar a imagem */
+    display: block; /* Faz a imagem ocupar seu próprio espaço */
 }
 
 .icone:hover {
-    background: #e9794d;
-    color: white;
+    background: #e9794d; /* Muda o fundo do botão ao passar o mouse */
+    color: white; /* Muda a cor do conteúdo para branco */
 }
 
 .carrinho span {
-    position: absolute;
-    top: -5px;
-    right: -4px;
-    background: #e9794d;
-    color: white;
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    font-size: 11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute; /* Permite posicionar o contador sobre o carrinho */
+    top: -5px; /* Move o contador para cima */
+    right: -4px; /* Move o contador para a direita */
+    background: #e9794d; /* Define a cor de fundo do contador */
+    color: white; /* Define a cor do número */
+    width: 19px; /* Define a largura do contador */
+    height: 19px; /* Define a altura do contador */
+    border-radius: 50%; /* Deixa o contador redondo */
+    font-size: 11px; /* Define o tamanho do número */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza o número verticalmente */
+    justify-content: center; /* Centraliza o número horizontalmente */
 }
 
 
@@ -127,98 +146,98 @@ a {
 ===================================================== */
 
 .barra-busca {
-    display: none;
-    background: white;
-    padding: 15px 6%;
-    border-bottom: 1px solid #ddd;
-    gap: 10px;
+    display: none; /* Esconde a barra de busca inicialmente */
+    background: white; /* Define o fundo branco */
+    padding: 15px 6%; /* Adiciona espaçamento interno */
+    border-bottom: 1px solid #ddd; /* Cria uma borda inferior */
+    gap: 10px; /* Cria espaço entre os elementos */
 }
 
 .barra-busca.ativa {
-    display: flex;
+    display: flex; /* Mostra a barra quando a classe ativa é adicionada */
 }
 
 .barra-busca input {
-    flex: 1;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
+    flex: 1; /* Faz o campo ocupar o espaço disponível */
+    padding: 14px; /* Adiciona espaço dentro do campo */
+    border: 1px solid #ddd; /* Define uma borda fina */
+    border-radius: 8px; /* Arredonda os cantos */
+    outline: none; /* Remove o contorno padrão ao clicar */
 }
 
 .barra-busca button {
-    border: none;
-    background: #123d52;
-    color: white;
-    width: 50px;
-    border-radius: 8px;
+    border: none; /* Remove a borda do botão */
+    background: #123d52; /* Define o fundo azul */
+    color: white; /* Define a cor do texto */
+    width: 50px; /* Define a largura do botão */
+    border-radius: 8px; /* Arredonda os cantos */
 }
 
 
 /* =====================================================
-   HERO
+   HERO - DESTAQUE PRINCIPAL
 ===================================================== */
 
 .hero {
-    min-height: 650px;
+    min-height: 650px; /* Define a altura mínima da seção */
 
     background:
         linear-gradient(
-            90deg,
-            rgba(11, 48, 64, 0.85),
-            rgba(11, 48, 64, 0.15)
+            90deg, /* Faz o degradê começar pela esquerda */
+            rgba(11, 48, 64, 0.85), /* Define a primeira cor com transparência */
+            rgba(11, 48, 64, 0.15) /* Define a segunda cor mais transparente */
         ),
-        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85"); /* Adiciona a imagem de fundo */
 
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Faz a imagem preencher toda a seção */
+    background-position: center; /* Centraliza a imagem de fundo */
 
-    display: flex;
-    align-items: center;
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 
-    padding: 80px 8%;
+    padding: 80px 8%; /* Adiciona espaçamento interno */
 }
 
 .hero-conteudo {
-    max-width: 600px;
-    color: white;
+    max-width: 600px; /* Limita a largura do conteúdo */
+    color: white; /* Define a cor dos textos como branca */
 }
 
 .pequeno-titulo {
-    color: #e9794d;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+    color: #e9794d; /* Define a cor do pequeno título */
+    font-size: 13px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    letter-spacing: 3px; /* Aumenta o espaço entre as letras */
+    margin-bottom: 15px; /* Cria espaço abaixo do título */
 }
 
 .hero h1 {
-    font-size: clamp(50px, 7vw, 88px);
-    line-height: 0.95;
-    margin-bottom: 25px;
-    letter-spacing: -4px;
+    font-size: clamp(50px, 7vw, 88px); /* Ajusta o tamanho conforme a tela, entre 50px e 88px */
+    line-height: 0.95; /* Ajusta a distância entre as linhas */
+    margin-bottom: 25px; /* Cria espaço abaixo do título */
+    letter-spacing: -4px; /* Aproxima as letras */
 }
 
 .hero-conteudo > p:not(.pequeno-titulo) {
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 500px;
-    margin-bottom: 35px;
+    font-size: 18px; /* Define o tamanho do parágrafo */
+    line-height: 1.6; /* Define o espaçamento entre as linhas */
+    max-width: 500px; /* Limita a largura do parágrafo */
+    margin-bottom: 35px; /* Cria espaço abaixo do parágrafo */
 }
 
 .botao-principal {
-    display: inline-block;
-    background: #e9794d;
-    color: white;
-    padding: 16px 28px;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
+    display: inline-block; /* Permite aplicar largura e altura mantendo o botão em linha */
+    background: #e9794d; /* Define o fundo laranja */
+    color: white; /* Define a cor do texto */
+    padding: 16px 28px; /* Adiciona espaço interno */
+    border-radius: 30px; /* Deixa o botão arredondado */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: 0.3s; /* Suaviza as mudanças */
 }
 
 .botao-principal:hover {
-    background: #d96338;
-    transform: translateY(-3px);
+    background: #d96338; /* Escurece o fundo ao passar o mouse */
+    transform: translateY(-3px); /* Move o botão um pouco para cima */
 }
 
 
@@ -227,93 +246,93 @@ a {
 ===================================================== */
 
 .categorias {
-    padding: 80px 6%;
-    background: #fffdf8;
+    padding: 80px 6%; /* Adiciona espaço interno em cima, embaixo e nas laterais */
+    background: #fffdf8; /* Define o fundo da seção */
 }
 
 .titulo-secao {
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 40px; /* Cria espaço abaixo do título */
 }
 
 .titulo-secao p {
-    color: #e9794d;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+    color: #e9794d; /* Define a cor do parágrafo */
+    font-size: 12px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    letter-spacing: 3px; /* Aumenta o espaço entre as letras */
+    margin-bottom: 10px; /* Cria espaço abaixo do parágrafo */
 }
 
 .titulo-secao h2 {
-    font-size: 42px;
-    color: #123d52;
+    font-size: 42px; /* Define o tamanho do título */
+    color: #123d52; /* Define a cor do título */
 }
 
 .categorias-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
+    display: grid; /* Ativa o sistema de grade */
+    grid-template-columns: repeat(5, 1fr); /* Cria cinco colunas de tamanhos iguais */
+    gap: 20px; /* Define o espaço entre as colunas e linhas */
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: auto; /* Centraliza a grade */
 }
 
 .categoria {
-    border: none;
-    background: transparent;
-    color: #173d50;
+    border: none; /* Remove a borda do botão */
+    background: transparent; /* Deixa o fundo transparente */
+    color: #173d50; /* Define a cor do texto */
 }
 
 .categoria-imagem {
-    height: 170px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    transition: 0.3s;
-    overflow: hidden;
+    height: 170px; /* Define a altura da área da imagem */
+    border-radius: 20px; /* Arredonda os cantos */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    margin-bottom: 15px; /* Cria espaço abaixo da imagem */
+    transition: 0.3s; /* Suaviza os efeitos */
+    overflow: hidden; /* Esconde o que ultrapassar os limites */
 }
 
 .imagem-categoria {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; /* Faz a imagem ocupar toda a largura */
+    height: 100%; /* Faz a imagem ocupar toda a altura */
+    object-fit: cover; /* Preenche o espaço sem deformar a imagem */
+    display: block; /* Remove espaços extras abaixo da imagem */
 }
 
 .categoria:hover .categoria-imagem {
-    transform: translateY(-8px);
+    transform: translateY(-8px); /* Move a imagem para cima ao passar o mouse */
 }
 
 .joias {
-    background: #ead9bb;
+    background: #ead9bb; /* Define o fundo da categoria de joias */
 }
 
 .cangas {
-    background: #f2c6bb;
+    background: #f2c6bb; /* Define o fundo da categoria de cangas */
 }
 
 .bolsas {
-    background: #c5d8ce;
+    background: #c5d8ce; /* Define o fundo da categoria de bolsas */
 }
 
 .toalhas {
-    background: #bcd8e8;
+    background: #bcd8e8; /* Define o fundo da categoria de toalhas */
 }
 
 .garrafas {
-    background: #d1e2e9;
+    background: #d1e2e9; /* Define o fundo da categoria de garrafas */
 }
 
 .categoria h3 {
-    font-size: 18px;
-    margin-bottom: 7px;
+    font-size: 18px; /* Define o tamanho do nome da categoria */
+    margin-bottom: 7px; /* Cria espaço abaixo do título */
 }
 
 .categoria span {
-    font-size: 12px;
-    color: #e9794d;
-    font-weight: bold;
+    font-size: 12px; /* Define o tamanho do texto complementar */
+    color: #e9794d; /* Define a cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 
@@ -322,38 +341,38 @@ a {
 ===================================================== */
 
 .produtos {
-    padding: 90px 6%;
-    background: #f5f2eb;
+    padding: 90px 6%; /* Adiciona espaçamento interno */
+    background: #f5f2eb; /* Define o fundo da seção */
 }
 
 .produtos-topo {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 40px;
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: auto; /* Centraliza o conteúdo */
+    display: flex; /* Coloca os elementos em linha */
+    justify-content: space-between; /* Separa os elementos */
+    align-items: end; /* Alinha os elementos pela parte inferior */
+    margin-bottom: 40px; /* Cria espaço abaixo do cabeçalho dos produtos */
 }
 
 .produtos-topo h2 {
-    font-size: 44px;
-    color: #123d52;
+    font-size: 44px; /* Define o tamanho do título */
+    color: #123d52; /* Define a cor do título */
 }
 
 .botao-todos {
-    background: transparent;
-    border: none;
-    color: #e9794d;
-    font-weight: bold;
+    background: transparent; /* Deixa o fundo transparente */
+    border: none; /* Remove a borda */
+    color: #e9794d; /* Define a cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 .produtos-grid {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1200px; /* Limita a largura máxima da grade */
+    margin: auto; /* Centraliza a grade */
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    display: grid; /* Ativa o sistema de grade */
+    grid-template-columns: repeat(3, 1fr); /* Cria três colunas iguais */
+    gap: 25px; /* Define o espaço entre os produtos */
 }
 
 
@@ -362,144 +381,144 @@ a {
 ===================================================== */
 
 .produto {
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    transition: 0.3s;
-    border: 1px solid #eee8dd;
+    background: white; /* Define o fundo branco do cartão */
+    border-radius: 18px; /* Arredonda os cantos */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites */
+    transition: 0.3s; /* Suaviza os efeitos */
+    border: 1px solid #eee8dd; /* Cria uma borda fina */
 }
 
 .produto:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px rgba(20, 50, 60, 0.12);
+    transform: translateY(-7px); /* Move o cartão para cima ao passar o mouse */
+    box-shadow: 0 15px 35px rgba(20, 50, 60, 0.12); /* Adiciona uma sombra */
 }
 
 .produto-imagem {
-    height: 310px;
-    position: relative;
+    height: 310px; /* Define a altura da área da imagem */
+    position: relative; /* Permite posicionar etiquetas dentro da área */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
 }
 
 .imagem-bolsa {
-    background: #d8c3ad;
+    background: #d8c3ad; /* Define o fundo da imagem da bolsa */
 }
 
 .imagem-canga {
-    background: #edc4bd;
+    background: #edc4bd; /* Define o fundo da imagem da canga */
 }
 
 .imagem-joia {
-    background: #e9d9bd;
+    background: #e9d9bd; /* Define o fundo da imagem da joia */
 }
 
 .imagem-toalha {
-    background: #bfd5e4;
+    background: #bfd5e4; /* Define o fundo da imagem da toalha */
 }
 
 .imagem-garrafa {
-    background: #c7dfe5;
+    background: #c7dfe5; /* Define o fundo da imagem da garrafa */
 }
 
 .imagem-coast {
-    background: #d0c6b8;
+    background: #d0c6b8; /* Define o fundo da imagem da bolsa Coast */
 }
 
 .produto-desenho {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 100%; /* Ocupa toda a altura disponível */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
 }
 
 .imagem-produto {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.15));
+    width: 85%; /* Define a largura da imagem do produto */
+    height: 85%; /* Define a altura da imagem do produto */
+    object-fit: contain; /* Mostra a imagem inteira sem deformar */
+    display: block; /* Remove espaços extras abaixo da imagem */
+    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.15)); /* Adiciona sombra ao redor da imagem */
 }
 
 .etiqueta {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: #e9794d;
-    color: white;
-    padding: 7px 10px;
-    border-radius: 20px;
-    font-size: 10px;
-    font-weight: bold;
+    position: absolute; /* Posiciona a etiqueta sobre a imagem */
+    top: 15px; /* Define a distância do topo */
+    left: 15px; /* Define a distância da esquerda */
+    background: #e9794d; /* Define o fundo laranja */
+    color: white; /* Define a cor do texto */
+    padding: 7px 10px; /* Adiciona espaço interno */
+    border-radius: 20px; /* Arredonda a etiqueta */
+    font-size: 10px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 .produto-info {
-    padding: 22px;
+    padding: 22px; /* Adiciona espaço interno nas informações */
 }
 
 .categoria-produto {
-    color: #e9794d;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    color: #e9794d; /* Define a cor da categoria */
+    font-size: 10px; /* Define o tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    letter-spacing: 2px; /* Aumenta o espaço entre as letras */
 }
 
 .produto h3 {
-    color: #173d50;
-    margin: 8px 0;
-    font-size: 19px;
+    color: #173d50; /* Define a cor do nome do produto */
+    margin: 8px 0; /* Adiciona margem em cima e embaixo */
+    font-size: 19px; /* Define o tamanho do nome */
 }
 
 .avaliacao {
-    color: #e9a93d;
-    font-size: 13px;
-    margin-bottom: 15px;
+    color: #e9a93d; /* Define a cor das estrelas */
+    font-size: 13px; /* Define o tamanho das estrelas */
+    margin-bottom: 15px; /* Cria espaço abaixo da avaliação */
 }
 
 .avaliacao span {
-    color: #888;
+    color: #888; /* Define a cor do texto da avaliação */
 }
 
 .precos {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 18px;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os preços em coluna */
+    gap: 4px; /* Define o espaço entre os preços */
+    margin-bottom: 18px; /* Cria espaço abaixo dos preços */
 }
 
 .preco-antigo {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 13px;
+    text-decoration: line-through; /* Risca o preço antigo */
+    color: #999; /* Define a cor cinza */
+    font-size: 13px; /* Define o tamanho do preço antigo */
 }
 
 .precos strong {
-    font-size: 25px;
-    color: #173d50;
+    font-size: 25px; /* Aumenta o tamanho do preço atual */
+    color: #173d50; /* Define a cor do preço atual */
 }
 
 .botao-comprar {
-    width: 100%;
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background: #173d50;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
+    width: 100%; /* Faz o botão ocupar toda a largura */
+    padding: 13px; /* Adiciona espaço interno */
+    border: none; /* Remove a borda */
+    border-radius: 8px; /* Arredonda os cantos */
+    background: #173d50; /* Define o fundo azul */
+    color: white; /* Define a cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: 0.3s; /* Suaviza a mudança de aparência */
 }
 
 .botao-comprar:hover {
-    background: #e9794d;
+    background: #e9794d; /* Muda o fundo para laranja ao passar o mouse */
 }
 
 .sem-resultado {
-    display: none;
-    text-align: center;
-    margin-top: 40px;
-    font-size: 20px;
+    display: none; /* Esconde a mensagem inicialmente */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 40px; /* Cria espaço acima da mensagem */
+    font-size: 20px; /* Define o tamanho da fonte */
 }
 
 
@@ -508,36 +527,36 @@ a {
 ===================================================== */
 
 .banner {
-    min-height: 400px;
+    min-height: 400px; /* Define a altura mínima do banner */
     background:
         linear-gradient(
-            90deg,
-            rgba(10, 50, 65, 0.95),
-            rgba(10, 50, 65, 0.55)
+            90deg, /* Define a direção do degradê */
+            rgba(10, 50, 65, 0.95), /* Define a primeira cor do degradê */
+            rgba(10, 50, 65, 0.55) /* Define a segunda cor do degradê */
         ),
-        url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1800&q=85");
+        url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1800&q=85"); /* Adiciona a imagem de fundo */
 
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Faz a imagem preencher o banner */
+    background-position: center; /* Centraliza a imagem */
 
-    display: flex;
-    align-items: center;
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 
-    padding: 60px 8%;
-    color: white;
+    padding: 60px 8%; /* Adiciona espaçamento interno */
+    color: white; /* Define a cor dos textos */
 }
 
 .banner h2 {
-    font-size: 50px;
-    line-height: 1;
-    margin: 15px 0 25px;
+    font-size: 50px; /* Define o tamanho do título */
+    line-height: 1; /* Ajusta a altura das linhas */
+    margin: 15px 0 25px; /* Define margens em cima, nas laterais e embaixo */
 }
 
 .banner a {
-    color: white;
-    font-weight: bold;
-    border-bottom: 2px solid #e9794d;
-    padding-bottom: 5px;
+    color: white; /* Define a cor do link */
+    font-weight: bold; /* Deixa o texto em negrito */
+    border-bottom: 2px solid #e9794d; /* Cria uma linha laranja abaixo do link */
+    padding-bottom: 5px; /* Cria espaço entre o texto e a linha */
 }
 
 
@@ -546,53 +565,53 @@ a {
 ===================================================== */
 
 .sobre {
-    padding: 100px 8%;
-    background: #fffdf8;
+    padding: 100px 8%; /* Adiciona espaçamento interno */
+    background: #fffdf8; /* Define o fundo da seção */
 
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 80px;
-    align-items: center;
+    display: grid; /* Ativa o sistema de grade */
+    grid-template-columns: 1.5fr 1fr; /* Cria duas colunas, a primeira maior */
+    gap: 80px; /* Define o espaço entre as colunas */
+    align-items: center; /* Centraliza os conteúdos verticalmente */
 }
 
 .sobre h2 {
-    font-size: clamp(35px, 5vw, 60px);
-    line-height: 1;
-    color: #123d52;
-    margin-bottom: 25px;
+    font-size: clamp(35px, 5vw, 60px); /* Ajusta o tamanho do título conforme a tela */
+    line-height: 1; /* Ajusta a distância entre as linhas */
+    color: #123d52; /* Define a cor do título */
+    margin-bottom: 25px; /* Cria espaço abaixo do título */
 }
 
 .sobre h2 span {
-    color: #e9794d;
+    color: #e9794d; /* Destaca uma parte do título em laranja */
 }
 
 .sobre-texto > p:last-child {
-    max-width: 650px;
-    color: #61727a;
-    line-height: 1.8;
+    max-width: 650px; /* Limita a largura do último parágrafo */
+    color: #61727a; /* Define a cor do texto */
+    line-height: 1.8; /* Aumenta o espaçamento entre as linhas */
 }
 
 .sobre-numeros {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os números em coluna */
+    gap: 25px; /* Define o espaço entre os números */
 }
 
 .sobre-numeros div {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd6ca;
+    display: flex; /* Coloca os elementos em linha */
+    gap: 20px; /* Cria espaço entre os elementos */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    padding-bottom: 20px; /* Adiciona espaço abaixo */
+    border-bottom: 1px solid #ddd6ca; /* Cria uma linha separadora */
 }
 
 .sobre-numeros strong {
-    color: #e9794d;
-    font-size: 30px;
+    color: #e9794d; /* Define a cor dos números */
+    font-size: 30px; /* Define o tamanho dos números */
 }
 
 .sobre-numeros span {
-    font-weight: bold;
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 
@@ -601,107 +620,107 @@ a {
 ===================================================== */
 
 .newsletter {
-    background: #173d50;
-    color: white;
-    padding: 70px 8%;
+    background: #173d50; /* Define o fundo azul */
+    color: white; /* Define a cor dos textos */
+    padding: 70px 8%; /* Adiciona espaçamento interno */
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    display: flex; /* Ativa o Flexbox */
+    justify-content: space-between; /* Separa o texto e o formulário */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    gap: 40px; /* Define o espaço entre os elementos */
 }
 
 .newsletter p {
-    color: #e9794d;
-    font-size: 11px;
-    letter-spacing: 3px;
-    font-weight: bold;
+    color: #e9794d; /* Define a cor do pequeno título */
+    font-size: 11px; /* Define o tamanho da fonte */
+    letter-spacing: 3px; /* Aumenta o espaço entre as letras */
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 .newsletter h2 {
-    font-size: 35px;
-    margin: 10px 0;
+    font-size: 35px; /* Define o tamanho do título */
+    margin: 10px 0; /* Adiciona margem em cima e embaixo */
 }
 
 .newsletter span {
-    color: #c4d0d4;
+    color: #c4d0d4; /* Define a cor do texto complementar */
 }
 
 .newsletter form {
-    display: flex;
-    min-width: 400px;
+    display: flex; /* Coloca o campo e o botão em linha */
+    min-width: 400px; /* Define a largura mínima do formulário */
 }
 
 .newsletter input {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    outline: none;
+    flex: 1; /* Faz o campo ocupar o espaço disponível */
+    padding: 15px; /* Adiciona espaço interno */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o contorno ao clicar */
 }
 
 .newsletter button {
-    border: none;
-    background: #e9794d;
-    color: white;
-    padding: 0 22px;
-    font-weight: bold;
+    border: none; /* Remove a borda do botão */
+    background: #e9794d; /* Define o fundo laranja */
+    color: white; /* Define a cor do texto */
+    padding: 0 22px; /* Adiciona espaço nas laterais */
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 
 /* =====================================================
-   FOOTER
+   FOOTER - RODAPÉ
 ===================================================== */
 
 .footer {
-    background: #102d3c;
-    color: white;
-    padding: 60px 8%;
+    background: #102d3c; /* Define o fundo azul escuro */
+    color: white; /* Define a cor dos textos */
+    padding: 60px 8%; /* Adiciona espaçamento interno */
 
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
+    display: grid; /* Ativa o sistema de grade */
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Cria quatro colunas, a primeira maior */
+    gap: 40px; /* Define o espaço entre as colunas */
 }
 
 .footer-logo {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 28px; /* Define o tamanho da logo no rodapé */
+    font-weight: bold; /* Deixa a logo em negrito */
 }
 
 .footer-logo span {
-    color: #e9794d;
+    color: #e9794d; /* Destaca uma parte da logo em laranja */
 }
 
 .footer-logo p {
-    font-size: 13px;
-    color: #aabcc3;
-    margin-top: 10px;
+    font-size: 13px; /* Define o tamanho do texto */
+    color: #aabcc3; /* Define a cor do texto */
+    margin-top: 10px; /* Cria espaço acima do parágrafo */
 }
 
 .footer-coluna {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os links em coluna */
+    gap: 12px; /* Define o espaço entre os links */
 }
 
 .footer-coluna h3 {
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Cria espaço abaixo do título */
 }
 
 .footer-coluna a {
-    color: #aabcc3;
-    font-size: 14px;
+    color: #aabcc3; /* Define a cor dos links */
+    font-size: 14px; /* Define o tamanho dos links */
 }
 
 .footer-coluna a:hover {
-    color: white;
+    color: white; /* Muda a cor do link ao passar o mouse */
 }
 
 .copyright {
-    background: #0b2430;
-    color: #78909a;
-    text-align: center;
-    padding: 18px;
-    font-size: 12px;
+    background: #0b2430; /* Define o fundo da área de direitos autorais */
+    color: #78909a; /* Define a cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 18px; /* Adiciona espaço interno */
+    font-size: 12px; /* Define o tamanho da fonte */
 }
 
 
@@ -710,239 +729,240 @@ a {
 ===================================================== */
 
 .modal {
-    display: none;
+    display: none; /* Esconde a janela inicialmente */
 
-    position: fixed;
-    inset: 0;
+    position: fixed; /* Fixa a janela na tela */
+    inset: 0; /* Faz a janela ocupar toda a tela */
 
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.55); /* Cria um fundo preto transparente */
 
-    z-index: 2000;
+    z-index: 2000; /* Coloca a janela acima dos outros elementos */
 
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centraliza a janela verticalmente */
+    justify-content: center; /* Centraliza a janela horizontalmente */
 }
 
 .modal.aberto {
-    display: flex;
+    display: flex; /* Mostra a janela quando recebe a classe aberto */
 }
 
 .modal-conteudo {
-    background: white;
-    width: 90%;
-    max-width: 500px;
+    background: white; /* Define o fundo branco */
+    width: 90%; /* Define a largura como 90% da tela */
+    max-width: 500px; /* Limita a largura máxima */
 
-    max-height: 80vh;
-    overflow-y: auto;
+    max-height: 80vh; /* Limita a altura a 80% da tela */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
 
-    border-radius: 20px;
-    padding: 30px;
+    border-radius: 20px; /* Arredonda os cantos */
+    padding: 30px; /* Adiciona espaço interno */
 
-    position: relative;
+    position: relative; /* Permite posicionar o botão de fechar */
 }
 
 .fechar {
-    position: absolute;
-    right: 20px;
-    top: 15px;
+    position: absolute; /* Posiciona o botão dentro da janela */
+    right: 20px; /* Define a distância da direita */
+    top: 15px; /* Define a distância do topo */
 
-    border: none;
-    background: transparent;
+    border: none; /* Remove a borda */
+    background: transparent; /* Deixa o fundo transparente */
 
-    font-size: 22px;
+    font-size: 22px; /* Define o tamanho do símbolo de fechar */
 }
 
 .modal-conteudo h2 {
-    color: #173d50;
-    margin-bottom: 25px;
+    color: #173d50; /* Define a cor do título */
+    margin-bottom: 25px; /* Cria espaço abaixo do título */
 }
 
 .carrinho-vazio {
-    text-align: center;
-    padding: 30px;
-    color: #777;
+    text-align: center; /* Centraliza a mensagem */
+    padding: 30px; /* Adiciona espaço interno */
+    color: #777; /* Define a cor cinza do texto */
 }
 
 .item-carrinho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Coloca as informações e o botão em linha */
+    justify-content: space-between; /* Separa os elementos */
+    align-items: center; /* Centraliza os elementos verticalmente */
 
-    padding: 15px 0;
+    padding: 15px 0; /* Adiciona espaço em cima e embaixo */
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Cria uma linha separadora */
 }
 
 .item-carrinho h3 {
-    font-size: 16px;
+    font-size: 16px; /* Define o tamanho do nome do produto */
 }
 
 .item-carrinho p {
-    color: #e9794d;
-    margin-top: 5px;
+    color: #e9794d; /* Define a cor do preço */
+    margin-top: 5px; /* Cria espaço acima do preço */
 }
 
 .remover {
-    border: none;
-    background: #f1e7df;
-    color: #b94e2d;
-    padding: 7px 10px;
-    border-radius: 6px;
+    border: none; /* Remove a borda */
+    background: #f1e7df; /* Define o fundo do botão */
+    color: #b94e2d; /* Define a cor do texto */
+    padding: 7px 10px; /* Adiciona espaço interno */
+    border-radius: 6px; /* Arredonda os cantos */
 }
 
 .total {
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Coloca a descrição e o valor em linha */
+    justify-content: space-between; /* Separa a descrição e o valor */
 
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 20px; /* Define o tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
 
-    margin-top: 25px;
+    margin-top: 25px; /* Cria espaço acima do total */
 }
 
 .finalizar {
-    width: 100%;
-    padding: 15px;
+    width: 100%; /* Faz o botão ocupar toda a largura */
+    padding: 15px; /* Adiciona espaço interno */
 
-    margin-top: 20px;
+    margin-top: 20px; /* Cria espaço acima do botão */
 
-    border: none;
-    border-radius: 8px;
+    border: none; /* Remove a borda */
+    border-radius: 8px; /* Arredonda os cantos */
 
-    background: #e9794d;
-    color: white;
+    background: #e9794d; /* Define o fundo laranja */
+    color: white; /* Define a cor do texto */
 
-    font-weight: bold;
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 
 /* =====================================================
    RESPONSIVIDADE
+   Adapta o site para diferentes tamanhos de tela
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 900px) { /* Aplica estas regras em telas de até 900px */
 
     .menu {
-        display: none;
+        display: none; /* Esconde o menu em telas menores */
     }
 
     .categorias-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Mostra três colunas de categorias */
     }
 
     .produtos-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Mostra dois produtos por linha */
     }
 
     .sobre {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Coloca a seção sobre em uma coluna */
     }
 
     .newsletter {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: column; /* Coloca o texto e o formulário um abaixo do outro */
+        align-items: stretch; /* Faz os elementos ocuparem a largura disponível */
     }
 
     .newsletter form {
-        min-width: 0;
+        min-width: 0; /* Permite que o formulário diminua */
     }
 
     .footer {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Organiza o rodapé em duas colunas */
     }
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Aplica estas regras em celulares com até 600px */
 
     .header {
-        padding: 0 20px;
+        padding: 0 20px; /* Diminui o espaço nas laterais do cabeçalho */
     }
 
     .logo {
-        font-size: 25px;
+        font-size: 25px; /* Diminui o tamanho da logo */
     }
 
     .hero {
-        min-height: 550px;
-        padding: 50px 25px;
+        min-height: 550px; /* Diminui a altura mínima da seção principal */
+        padding: 50px 25px; /* Ajusta o espaçamento interno */
     }
 
     .hero h1 {
-        font-size: 55px;
+        font-size: 55px; /* Ajusta o tamanho do título */
     }
 
     .categorias {
-        padding: 60px 20px;
+        padding: 60px 20px; /* Diminui o espaçamento da seção */
     }
 
     .titulo-secao h2 {
-        font-size: 32px;
+        font-size: 32px; /* Diminui o título das categorias */
     }
 
     .categorias-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Mostra duas categorias por linha */
     }
 
     .categoria-imagem {
-        height: 130px;
+        height: 130px; /* Diminui a altura das imagens */
     }
 
     .imagem-categoria {
-        width: 100%;
-        height: 100%;
+        width: 100%; /* Mantém a imagem ocupando toda a largura */
+        height: 100%; /* Mantém a imagem ocupando toda a altura */
     }
 
     .produtos {
-        padding: 60px 20px;
+        padding: 60px 20px; /* Diminui o espaçamento da seção de produtos */
     }
 
     .produtos-topo {
-        display: block;
+        display: block; /* Coloca os elementos um abaixo do outro */
     }
 
     .produtos-topo h2 {
-        font-size: 35px;
-        margin-bottom: 15px;
+        font-size: 35px; /* Diminui o título dos produtos */
+        margin-bottom: 15px; /* Cria espaço abaixo do título */
     }
 
     .produtos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Mostra um produto por linha */
     }
 
     .banner {
-        padding: 50px 25px;
+        padding: 50px 25px; /* Ajusta o espaçamento do banner */
     }
 
     .banner h2 {
-        font-size: 38px;
+        font-size: 38px; /* Diminui o título do banner */
     }
 
     .sobre {
-        padding: 70px 25px;
+        padding: 70px 25px; /* Ajusta o espaçamento da seção sobre */
     }
 
     .newsletter {
-        padding: 60px 25px;
+        padding: 60px 25px; /* Ajusta o espaçamento da newsletter */
     }
 
     .newsletter h2 {
-        font-size: 28px;
+        font-size: 28px; /* Diminui o título da newsletter */
     }
 
     .newsletter form {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; /* Coloca o campo e o botão em coluna */
+        gap: 10px; /* Cria espaço entre o campo e o botão */
     }
 
     .newsletter input,
     .newsletter button {
-        padding: 15px;
+        padding: 15px; /* Ajusta o espaço interno dos campos e botões */
     }
 
     .footer {
-        grid-template-columns: 1fr;
-        padding: 50px 25px;
+        grid-template-columns: 1fr; /* Organiza o rodapé em uma coluna */
+        padding: 50px 25px; /* Ajusta o espaçamento do rodapé */
     }
 
 }
